@@ -8,7 +8,6 @@ just setting up by unityignore file and one single button click.
 <br/><br/>
 
 ### Acknowledge ###
-<br/>
 
 This is a small plugin for people who have multiple projects in one 
 Unity project or people who need to export there tools depends on 
@@ -19,12 +18,11 @@ The idea behind this plugin is to do it once and never have to
 worry again.
 
 ### Tutorials ###
-<br/>
 
 Once you open JCSUnity PE editor window then you can start manage
 your packages. After you enter you package name and version number
-(optional) then you can generate the unityignore file. <br/>
-<img src="./screen_shot/package-manage.gif"/>
+(optional) then you can generate the unityignore file. <br/><br/>
+<img src="./screen_shot/package-manage.gif" width="268" height="390"/>
 <br/><br/>
 
 Here is an example of the unityignore file. All the unityignore 
