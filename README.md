@@ -31,7 +31,7 @@ Here is an example of the unityignore file. All the unityignore
 file will be generated under 'Assets/JCSUNity_PE/unityignore/'
 folder. 
 <br/><br/>
-`
+```
 # 
 # Thank you for using 'JCSUnity Packages Exporter'. This is the generated 
 # unityignore file.
@@ -48,7 +48,7 @@ folder.
 # Ignore this plugin itself.
 JCSUnity_PE
 
-`
+```
 <br/>
 
 Once you click on export package button, the plugin will
