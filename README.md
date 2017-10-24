@@ -6,3 +6,55 @@ JCSUnity_PE stand for JCSUnity Package Exporter. This plugin help
 manage your Unity Project and export into multiple pakcages by 
 just setting up by unityignore file and one single button click. 
 <br/><br/>
+
+### Acknowledge ###
+<br/>
+
+This is a small plugin for people who have multiple projects in one 
+Unity project or people who need to export there tools depends on 
+different variety user. The goal of this project is to stop using 
+Unity default export package system because people will have to 
+manually choose what assets to export and what assets not to export. 
+The idea behind this plugin is to do it once and never have to 
+worry again.
+
+### Tutorials ###
+<br/>
+
+Once you open JCSUnity PE editor window then you can start manage
+your packages. After you enter you package name and version number
+(optional) then you can generate the unityignore file. <br/>
+<img src="./screen_shot/package-manage.gif"/>
+<br/><br/>
+
+Here is an example of the unityignore file. All the unityignore 
+file will be generated under 'Assets/JCSUNity_PE/unityignore/'
+folder. 
+<br/><br/>
+`
+# 
+# Thank you for using 'JCSUnity Packages Exporter'. This is the generated 
+# unityignore file.
+# 
+# Package Name: Hello World
+# Version: 1.0.0
+# Creation Date: 2017-10-25 06:58:14 
+# 
+# Package Link: https://github.com/jcs090218/JCSUnity_PE
+# Author: Shen, Jen-Chieh
+# Email: jcs090218@gmail.com
+# 
+
+# Ignore this plugin itself.
+JCSUnity_PE
+
+`
+<br/>
+
+Once you click on export package button, the plugin will
+find the corresponding unityignore file and include everything 
+else except the paths inside unityignore file. Is the same
+idea as using git and .gitignore file.
+<br/><br/>
+<img src="./screen_shot/export-package.gif"/>
+<br/><br/>
