@@ -1,0 +1,16 @@
+# ========================================================================
+# $File: Update_Log.txt $
+# $Date: 2017-10-23 13:53:02 $
+# $Revision: $
+# $Creator: Jen-Chieh Shen $
+# $Notice: See LICENSE.txt for modification and distribution information
+#                   Copyright (c) 2017 by Shen, Jen-Chieh $
+# ========================================================================
+
+
+2017-10-24
+* JCS_PE_Window implemented and all function functional. (JCSUnity_PE)
+* Publish version 1.0.0. (JCSUnity_PE)
+
+2017-10-23
+* First setup project for JCSUnity_EP. (JCSUnity_EP)
