@@ -8,9 +8,14 @@
 # ========================================================================
 
 
+2017-10-25
+* Update readme file for better explaination. (JCSUnity_PE)
+
 2017-10-24
 * JCS_PE_Window implemented and all function functional. (JCSUnity_PE)
 * Publish version 1.0.0. (JCSUnity_PE)
+* First add license. (JCSUnity_PE)
+* First add readme file. (JCSUnity_PE)
 
 2017-10-23
 * First setup project for JCSUnity_EP. (JCSUnity_EP)
