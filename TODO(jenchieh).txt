@@ -9,3 +9,5 @@
 
 
 //-- General --//
+* Support ingore extension syntax.
+  -> ex: *.meta
