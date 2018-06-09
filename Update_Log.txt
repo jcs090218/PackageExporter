@@ -8,6 +8,10 @@
 # ========================================================================
 
 
+2018-06-09
+* Upgrade project Unity version to 2018.1.3f1. (JCSUnity_PE)
+* Fixed bug upto version Unity 2018.1.3f1. (JCSUnity_PE)
+
 2017-10-25
 * Update readme file for better explaination. (JCSUnity_PE)
 
