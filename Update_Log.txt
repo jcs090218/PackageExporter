@@ -8,6 +8,9 @@
 # ========================================================================
 
 
+2018-10-21
+* Update project's Unity Engine version to 2018.2.13f1. (JCSUnity_PE)
+
 2018-10-13
 * Update project's Unity Engine version to 2018.2.12f1. (JCSUnity_PE)
 
