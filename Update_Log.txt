@@ -8,6 +8,9 @@
 # ========================================================================
 
 
+2018-11-19
+* Ignore .unityignore test file => Hello World.unityignore. (JCSUnity_PE)
+
 2018-11-16
 * Update project's Unity Engine version to 2018.2.16f1. (JCSUnity_PE)
 
