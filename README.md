@@ -1,6 +1,6 @@
 # JCSUnity_PE #
-<br/>
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 JCSUnity_PE stand for JCSUnity Package Exporter. This plugin help
 manage your Unity Project and export into multiple pakcages by 
