@@ -25,15 +25,3 @@ script:
 
 after_success:
 - ./scripts/export-unity-package.sh
-
-before_deploy:
-- DEPLOY_UNITYPACKAGE="$(ls -a release/*.zip | head -n 1)"
-
-deploy:
-  provider: releases
-  api_key: $GITHUB_TOKEN
-  file: $DEPLOY_UNITYPACKAGE
-  skip_cleanup: true
-  overwrite: true
-  on:
-    tags: true 
