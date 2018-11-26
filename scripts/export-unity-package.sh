@@ -34,7 +34,7 @@ if [ $? = 0 ] ; then
 	echo "Preparing release for version: $TRAVIS_TAG"
 	cp "$EXPORT_PATH" "$RELEASE_DIRECTORY/"`basename "$EXPORT_PATH"`
 	cp "./README.md" "$RELEASE_DIRECTORY"
-	cp "./LICENSE" "$RELEASE_DIRECTORY"
+	cp "./LICENSE.txt" "$RELEASE_DIRECTORY"
 
 	echo "Files in release directory:"
 	ls $RELEASE_DIRECTORY
