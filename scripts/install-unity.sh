@@ -39,4 +39,3 @@ ls "$UNITY_DOWNLOAD_CACHE"
 echo "Installing Unity..."
 install "$UNITY_OSX_PACKAGE"
 install "$UNITY_WINDOWS_TARGET_PACKAGE"
-
