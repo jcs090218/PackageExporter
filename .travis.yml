@@ -22,7 +22,6 @@ install:
 
 script:
 - ./scripts/build.sh
-- ./scripts/run-tests.sh
 
 after_success:
 - ./scripts/export-unity-package.sh
