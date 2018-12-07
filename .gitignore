@@ -39,3 +39,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# ignore log and todos.
+TODO(jenchieh).txt
+Update_Log.txt
