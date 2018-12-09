@@ -398,6 +398,7 @@ PlayerSettings:
   switchAllowsVideoCapturing: 1
   switchAllowsRuntimeAddOnContentInstall: 0
   switchDataLossConfirmation: 0
+  switchUserAccountLockEnabled: 0
   switchSupportedNpadStyles: 3
   switchNativeFsCacheSize: 32
   switchIsHoldTypeHorizontal: 0
@@ -624,7 +625,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
   cloudProjectId: 777f3b51-7aea-4679-aed0-fb598d3c5cd3
-  projectName: JCSUnity_EP (1)
+  projectName: JCSUnity_PE
   organizationId: jcs090218
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
