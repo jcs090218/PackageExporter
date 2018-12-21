@@ -11,9 +11,11 @@ cache:
   directories:
     - $UNITY_DOWNLOAD_CACHE
 
-    
+
 before_install:
   - rvm get stable
+  - curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+  - chmod a+x ~/bin/repo
   - chmod a+x ./scripts/*.sh
 
 install:
