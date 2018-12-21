@@ -6,14 +6,14 @@ rvm:
 env:
   - TRAVIS_TAG="1.0.1" PROJECT_NAME="JCSUnity_PE" UNITY_PROJECT_PATH="./" UNITY_DOWNLOAD_CACHE="$(pwd)/unity_download_cache" DEPLOY_UNITYPACKAGE="path set in deploy script"
 
+sudo: true
 
 cache:
   directories:
     - $UNITY_DOWNLOAD_CACHE
 
-
 before_install:
-  - sudo apt-get install gnupg2
+  - apt-get install gnupg2
   - rvm get stable
   - chmod a+x ./scripts/*.sh
 
