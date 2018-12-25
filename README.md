@@ -3,10 +3,10 @@
 [![Build Status](https://travis-ci.com/jcs090218/JCSUnity_PE.svg?branch=master)](https://travis-ci.com/jcs090218/JCSUnity_PE)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-JCSUnity_PE stand for JCSUnity Package Exporter. This plugin help
-manage your Unity Project and export into multiple pakcages by 
-just setting up by unityignore file and one single button click. 
-<br/><br/>
+Unity Package Exporter - Export Unity package without needs to select the items 
+you want to export, simplify the way of exporting unity package's process. 
+Support export multiple packages at a time, and an analogous to gitignore in 
+git package management.<br/><br/>
 
 ### Acknowledge ###
 
