@@ -22,7 +22,7 @@ You can start the `PackageExporter` window from the menu bar `PackageExporter`.
 
 ### 3. Fill package info and generate `.unityignore` file ###
 <img src="./screenshot/package-info.png"/>
-After you fill the info, then hit `Generate Unity Ignore` button.
+After you fill the info, then hit *Generate Unity Ignore* button.
 
 ### 4. Edit `.unityignore` file ###
 All the `.unityignore` files can be found under `PackageExporter/unityignore`
