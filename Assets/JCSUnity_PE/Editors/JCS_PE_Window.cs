@@ -352,7 +352,7 @@ namespace JCSUnity
         /// About JCSUnity Package Exporter.
         /// </summary>
         [MenuItem("JCSUnity/JCS_PE", false, 1)]
-        private static void JCS_EPWindow()
+        private static void JCS_PEWindow()
         {
             JCS_PE_Window window = (JCS_PE_Window)GetWindow(typeof(JCS_PE_Window));
             window.Show();
