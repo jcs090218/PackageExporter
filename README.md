@@ -7,7 +7,7 @@ Export multiple packages by just one click, with no need to
 uncheck the assets to export package.
 
 <p align="center">
-  <img src="./screenshot/package-manage.png" with="197" height="394"/>
+  <img src="./screenshot/package-manage.png"/>
 </p>
 
 
