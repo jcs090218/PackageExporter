@@ -7,7 +7,6 @@
  * $Notice: See LICENSE.txt for modification and distribution information
  *                   Copyright (c) 2017 by Shen, Jen-Chieh $
  */
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -15,23 +14,23 @@ using System.IO;
 using System;
 
 
-namespace JCSUnity
+namespace PackageExporter
 {
     /// <summary>
-    /// JCSUnity Package Exporter's editor window.
+    /// Package Exporter window.
     /// </summary>
-    public class JCS_PE_Window
+    public class PackageExporterWindow
         : EditorWindow
     {
-        public static JCS_PE_Window instance = null;
+        public static PackageExporterWindow instance = null;
 
         private const string PACKAGE_FOLDER = "Assets";
         private const string DEFAULT_PACKAGE_NAME = "Empty Package Name";
         private const string DELIMITER = "_";
         private const string VERSION_SYMBOL = "v";
 
-        private const string IGNORE_FILE_PATH = "JCSUnity_PE/unityignore";
-        private const string TEMPLATE_PATH = "JCSUnity_PE/template";
+        private const string IGNORE_FILE_PATH = "PackageExporter/unityignore";
+        private const string TEMPLATE_PATH = "PackageExporter/template";
 
         private const string IGNORE_FILE_EXT = ".unityignore";
 
@@ -349,12 +348,12 @@ namespace JCSUnity
 
 
         /// <summary>
-        /// About JCSUnity Package Exporter.
+        /// About Package Exporter.
         /// </summary>
-        [MenuItem("JCSUnity/JCS_PE", false, 1)]
-        private static void JCS_PEWindow()
+        [MenuItem("PackageExporter/Window", false, 1)]
+        private static void GeneratePackageExporterWindow()
         {
-            JCS_PE_Window window = (JCS_PE_Window)GetWindow(typeof(JCS_PE_Window));
+            PackageExporterWindow window = (PackageExporterWindow)GetWindow(typeof(PackageExporterWindow));
             window.Show();
         }
 
@@ -425,7 +424,7 @@ namespace JCSUnity
 
             return false;
         }
-
     }
 }
+
 #endif

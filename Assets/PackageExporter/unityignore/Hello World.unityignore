@@ -1,0 +1,15 @@
+# 
+# Thank you for using 'Unity Package Exporter'. This is the generated 
+# unityignore file.
+# 
+# Package Name: Hello World
+# Version: 1.0.0
+# Creation Date: 2019-02-04 19:48:05 
+# 
+# Package Link: https://github.com/jcs090218/UnityPackageExporter
+# Author: Shen, Jen-Chieh
+# Email: jcs090218@gmail.com
+# 
+
+# Ignore this plugin itself.
+UnityPackageExporter
