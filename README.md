@@ -61,5 +61,6 @@ ProjectExporter
 
 ## Exporting ##
 Export the package `Hello World`.
-<br/>
-<img src="./screenshot/export-package.gif"/>
+<p>
+  <img src="./screenshot/export-package.gif"/>
+</p>
