@@ -57,7 +57,6 @@ Generated `.unityignore` file for `Hello World` package.
 ProjectExporter
 
 ```
-<br/>
 
 
 ## Exporting ##
