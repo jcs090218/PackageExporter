@@ -5,7 +5,7 @@
 # Unity Package Exporter #
 
 Export multiple packages by just one click, with no need to 
-uncheck the assets to export package.
+uncheck the assets.
 
 <p align="center">
   <img src="./screenshot/package-manage.png"/>
