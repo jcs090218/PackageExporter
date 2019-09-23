@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.com/jcs090218/UnityPackageExporter.svg?branch=master)](https://travis-ci.com/jcs090218/UnityPackageExporter)
-[![Unity Engine](https://img.shields.io/badge/Unity%20Engine-2019.2.4f1-blue.svg)](https://unity3d.com/get-unity/download/archive)
+[![Unity Engine](https://img.shields.io/badge/Unity%20Engine-2019.2.6f1-blue.svg)](https://unity3d.com/get-unity/download/archive)
 [![Release Tag](https://img.shields.io/github/tag/jcs090218/UnityPackageExporter.svg?label=release)](https://github.com/jcs090218/UnityPackageExporter/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -17,31 +17,39 @@ uncheck the assets.
 ## How to use?
 
 ### 1. Import Package
+
 You will need to import the package to your project. The package 
 can be download from [here](https://github.com/jcs090218/UnityPackageExporter/releases).
 
 ### 2. Start using Package Exporter Window
+
 You can start the `PackageExporter` window from the menu bar `PackageExporter`.
 
 ### 3. Fill package info and generate `.unityignore` file
+
 <img src="./screenshot/package-info.png"/>
 
 After you fill the info, then hit `Generate Unity Ignore` button.
 
 ### 4. Edit `.unityignore` file
+
 All the `.unityignore` files can be found under `PackageExporter/unityignore`
 directory. 
 
 ### 5. Export...
+
 Once the `.unityignore` file is generated, the according package 
 export button should appear.
 
 ### 6. Enjoy! ###
+
 Now you can manage as many packages you want to export!
 
 
 ## Unityignore Example
+
 Generated `.unityignore` file for `Hello World` package.
+
 ```
 # 
 # Thank you for using 'Unity Package Exporter'. This is the generated 
@@ -63,7 +71,9 @@ ProjectExporter
 
 
 ## Exporting
+
 Export the package `Hello World`.
+
 <p>
   <img src="./screenshot/export-package.gif"/>
 </p>
