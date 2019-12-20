@@ -77,3 +77,8 @@ Export the package `Hello World`.
 <p>
   <img src="./screenshot/export-package.gif"/>
 </p>
+
+
+## Todo List
+
+- [ ] Support ingore extension syntax. (*.meta)
