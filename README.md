@@ -1,18 +1,15 @@
 [![Build Status](https://travis-ci.com/jcs090218/UnityPackageExporter.svg?branch=master)](https://travis-ci.com/jcs090218/UnityPackageExporter)
-[![Unity Engine](https://img.shields.io/badge/Unity%20Engine-2019.3.3f1-blue.svg)](https://unity3d.com/get-unity/download/archive)
+[![Unity Engine](https://img.shields.io/badge/Unity%20Engine-2020.1.0f1-blue.svg)](https://unity3d.com/get-unity/download/archive)
 [![Release Tag](https://img.shields.io/github/tag/jcs090218/UnityPackageExporter.svg?label=release)](https://github.com/jcs090218/UnityPackageExporter/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-
 # Unity Package Exporter
 
-Export multiple packages by just one click, with no need to 
-uncheck the assets.
+Export multiple packages by just one click, with no need to uncheck the assets.
 
 <p align="center">
   <img src="./screenshot/package-manage.png"/>
 </p>
-
 
 ## :hammer: How to use?
 
@@ -69,7 +66,6 @@ ProjectExporter
 
 ```
 
-
 ## :rocket: Exporting
 
 Export the package `Hello World`.
@@ -77,7 +73,6 @@ Export the package `Hello World`.
 <p>
   <img src="./screenshot/export-package.gif"/>
 </p>
-
 
 ## Todo List
 
