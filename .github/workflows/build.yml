@@ -80,9 +80,16 @@ jobs:
           - StandaloneOSX
           - StandaloneWindows64
           - StandaloneLinux64
-          #- Android
-          #- iOS
-          #- WebGL
+          - Android
+          - iOS
+          - WebGL
+          - WSAPlayer
+          - PS4
+          - XboxOne
+          - tvOS
+          - Switch
+          - Stadia
+          #- CloudRendering
     steps:
       - uses: actions/checkout@v2
         with:
@@ -94,7 +101,7 @@ jobs:
           restore-keys: |
             Library-${{ matrix.projectPath }}-
             Library-
-      - uses: webbertakken/unity-builder@v1.4
+      - uses: webbertakken/unity-builder@v2.0-alpha-1
         with:
           projectPath: ${{ env.PROJECT_PATH }}
           unityVersion: ${{ env.UNITY_VERSION }}
