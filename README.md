@@ -8,7 +8,7 @@
 Export multiple packages by just one click, with no need to uncheck the assets.
 
 <p align="center">
-  <img src="./screenshot/package-manage.png"/>
+  <img src="./etc/package-manage.png"/>
 </p>
 
 ## :hammer: How to use?
@@ -24,7 +24,7 @@ You can start the `PackageExporter` window from the menu bar `PackageExporter`.
 
 ### 3. Fill package info and generate `.unityignore` file
 
-<img src="./screenshot/package-info.png"/>
+<img src="./etc/package-info.png"/>
 
 After you fill the info, then hit `Generate Unity Ignore` button.
 
@@ -71,7 +71,7 @@ ProjectExporter
 Export the package `Hello World`.
 
 <p>
-  <img src="./screenshot/export-package.gif"/>
+  <img src="./etc/export-package.gif"/>
 </p>
 
 ## Todo List
