@@ -1,4 +1,4 @@
-![Unity Actions](https://github.com/jcs090218/UnityPackageExporter/workflows/Unity%20Actions/badge.svg)
+[![CI](https://github.com/jcs090218/UnityPackageExporter/actions/workflows/build.yml/badge.svg)](https://github.com/jcs090218/UnityPackageExporter/actions/workflows/build.yml)
 [![Unity Engine](https://img.shields.io/badge/unity-2020.1.2f1-black.svg?style=flat&logo=unity&cacheSeconds=2592000)](https://unity3d.com/get-unity/download/archive)
 [![Release](https://img.shields.io/github/release/jcs090218/UnityPackageExporter.svg?logo=github)](https://github.com/jcs090218/UnityPackageExporter/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
