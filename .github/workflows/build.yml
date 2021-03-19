@@ -1,4 +1,4 @@
-name: Unity Actions
+name: CI
 
 on:
   pull_request: {}
@@ -30,7 +30,7 @@ jobs:
       # Request manual activation file
       - name: Request manual activation file
         id: getManualLicenseFile
-        uses: webbertakken/unity-request-manual-activation-file@master
+        uses: webbertakken/unity-request-manual-activation-file@main
         with:
           unityVersion: ${{ env.UNITY_VERSION }}
       # Upload artifact (Unity_v20XX.X.XXXX.alf)
@@ -101,12 +101,11 @@ jobs:
           restore-keys: |
             Library-${{ matrix.projectPath }}-
             Library-
-      - uses: webbertakken/unity-builder@v2.0-alpha-1
+      - uses: webbertakken/unity-builder@v2.0-alpha-6
         with:
           projectPath: ${{ env.PROJECT_PATH }}
           unityVersion: ${{ env.UNITY_VERSION }}
           targetPlatform: ${{ matrix.targetPlatform }}
-          customParameters: "-nographics"
       - uses: actions/upload-artifact@v1
         with:
           name: Build
