@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
 
+### 2021-04-07
+
+* Update Unity Engine version to `2021.1.1f1`.
+
 ### 2020-10-29
 
 * Changed from `Travis CI` to `GitHub Actions`.
