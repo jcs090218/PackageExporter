@@ -13,3 +13,6 @@
 
 # Ignore this plugin itself.
 PackageExporter
+
+# Ignore asset store plugin
+AssetStoreTools/
