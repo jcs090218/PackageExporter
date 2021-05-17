@@ -8,6 +8,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### 1.0.6
 
 * Improve user interface for control panel.
+* Add manual in the plugin directory.
 
 ### 1.0.5
 
