@@ -49,16 +49,16 @@ Generated `.unityignore` file for `Hello World` package.
 
 ```
 # 
-# Thank you for using 'Package Exporter'. This is the generated 
+# Thank you for using `Package Exporter`. This is the generated 
 # unityignore file.
 # 
 # Package Name: Hello World
 # Version: 1.0.0
 # Creation Date: 2017-10-25 06:58:14 
 # 
-# Package Link: https://github.com/Pixisoft/ProjectExporter
+# Package Link: https://github.com/Pixisoft/PackageExporter
 # Author: Shen, Jen-Chieh
-# Email: jcs090218@gmail.com
+# Email: pixisoft.tw@gmail.com
 # 
 
 # Ignore this plugin itself.
