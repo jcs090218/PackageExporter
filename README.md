@@ -1,6 +1,6 @@
-[![CI](https://github.com/jcs090218/UnityPackageExporter/actions/workflows/build.yml/badge.svg)](https://github.com/jcs090218/UnityPackageExporter/actions/workflows/build.yml)
+[![CI](https://github.com/Pixisoft/PackageExporter/actions/workflows/build.yml/badge.svg)](https://github.com/Pixisoft/PackageExporter/actions/workflows/build.yml)
 [![Unity Engine](https://img.shields.io/badge/unity-2021.1.1f1-black.svg?style=flat&logo=unity&cacheSeconds=2592000)](https://unity3d.com/get-unity/download/archive)
-[![Release](https://img.shields.io/github/release/jcs090218/UnityPackageExporter.svg?logo=github)](https://github.com/jcs090218/UnityPackageExporter/releases/latest)
+[![Release](https://img.shields.io/github/release/Pixisoft/PackageExporter.svg?logo=github)](https://github.com/Pixisoft/UnityPackageExporter/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 # Package Exporter
@@ -16,7 +16,7 @@ Export multiple packages by just one click, with no need to uncheck the assets.
 ### 1. Import Package
 
 You will need to import the package to your project. The package 
-can be download from [here](https://github.com/jcs090218/UnityPackageExporter/releases).
+can be download from [here](https://github.com/Pixisoft/PackageExporter/releases).
 
 ### 2. Start using Package Exporter Window
 
@@ -49,14 +49,14 @@ Generated `.unityignore` file for `Hello World` package.
 
 ```
 # 
-# Thank you for using 'Unity Package Exporter'. This is the generated 
+# Thank you for using 'Package Exporter'. This is the generated 
 # unityignore file.
 # 
 # Package Name: Hello World
 # Version: 1.0.0
 # Creation Date: 2017-10-25 06:58:14 
 # 
-# Package Link: https://github.com/jcs090218/UnityProjectExporter
+# Package Link: https://github.com/Pixisoft/ProjectExporter
 # Author: Shen, Jen-Chieh
 # Email: jcs090218@gmail.com
 # 
