@@ -3,7 +3,7 @@
 [![Release](https://img.shields.io/github/release/jcs090218/UnityPackageExporter.svg?logo=github)](https://github.com/jcs090218/UnityPackageExporter/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-# Unity Package Exporter
+# Package Exporter
 
 Export multiple packages by just one click, with no need to uncheck the assets.
 
