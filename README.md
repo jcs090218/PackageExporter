@@ -11,6 +11,14 @@ Export multiple packages by just one click, with no need to uncheck the assets.
   <img src="./etc/package-manage.png"/>
 </p>
 
+## Features
+
+* Export multiple packages in a project
+* Export method similar to `.gitignore` (easy for coder)
+* Lightweight, no other dependencies
+* Clean, no files are generated
+* Highly compatible to any Unity version
+
 ## :hammer: How to use?
 
 ### 1. Import Package
