@@ -21,6 +21,8 @@ Export multiple packages by just one click, with no need to uncheck the assets.
 
 ## :hammer: How to use?
 
+Here explains how you use this package correctly.
+
 ### :mag: Step 1. Import Package
 
 You will need to import the package to your project. The package 
