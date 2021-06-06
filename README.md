@@ -21,32 +21,32 @@ Export multiple packages by just one click, with no need to uncheck the assets.
 
 ## :hammer: How to use?
 
-### :mag: 1. Import Package
+### :mag: Step 1. Import Package
 
 You will need to import the package to your project. The package 
 can be download from [here](https://github.com/Pixisoft/PackageExporter/releases).
 
-### :mag: 2. Start using Package Exporter Window
+### :mag: Step 2. Start using Package Exporter Window
 
 You can start the `PackageExporter` window from the menu bar `PackageExporter`.
 
-### :mag: 3. Fill package info and generate `.unityignore` file
+### :mag: Step 3. Fill package info and generate `.unityignore` file
 
 <img src="./etc/package-info.png"/>
 
 After you fill the info, then hit `Generate Unity Ignore` button.
 
-### :mag: 4. Edit `.unityignore` file
+### :mag: Step 4. Edit `.unityignore` file
 
 All the `.unityignore` files can be found under `PackageExporter/unityignore`
 directory. 
 
-### :mag: 5. Export...
+### :mag: Step 5. Export...
 
 Once the `.unityignore` file is generated, the according package 
 export button should appear.
 
-### :mag: 6. Enjoy!
+### :mag: Step 6. Enjoy!
 
 Now you can manage as many packages you want to export! :tada:
 
