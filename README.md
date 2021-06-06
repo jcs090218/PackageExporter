@@ -88,4 +88,4 @@ Export the package `Hello World`.
 
 ## License
 
-Licensed under MIT. See [License.txt](https://github.com/Pixisoft/PackageExporter/blob/master/LICENSE.txt) for details.
+Licensed under MIT. See [LICENSE.txt](https://github.com/Pixisoft/PackageExporter/blob/master/LICENSE.txt) for details.
