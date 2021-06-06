@@ -85,3 +85,7 @@ Export the package `Hello World`.
 ## Todo List
 
 - [ ] Support ingore extension syntax. (*.meta)
+
+## License
+
+Licensed under MIT. See [License.txt](https://github.com/Pixisoft/PackageExporter/blob/master/LICENSE.txt) for details.
