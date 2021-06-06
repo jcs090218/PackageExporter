@@ -50,7 +50,7 @@ export button should appear.
 
 Now you can manage as many packages you want to export! :tada:
 
-## Unityignore Example
+## `.unityignore` File Example
 
 Generated `.unityignore` file for `Hello World` package.
 
