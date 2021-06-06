@@ -11,7 +11,7 @@ Export multiple packages by just one click, with no need to uncheck the assets.
   <img src="./etc/package-manage.png"/>
 </p>
 
-## Features
+## :trophy: Features
 
 * Export multiple packages in a project
 * Export method similar to `.gitignore` (easy for coder)
