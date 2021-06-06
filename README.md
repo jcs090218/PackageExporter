@@ -81,7 +81,7 @@ Export the package `Hello World`.
   <img src="./etc/export-package.gif"/>
 </p>
 
-## :Pencil: Todo List
+## :pencil: Todo List
 
 - [ ] Support ingore extension syntax. (*.meta)
 
