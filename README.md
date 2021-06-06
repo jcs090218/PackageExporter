@@ -46,7 +46,7 @@ directory.
 Once the `.unityignore` file is generated, the according package 
 export button should appear.
 
-### :mag: Step 6. Enjoy!
+### :tada: Done, and Enjoy! :partying_face:
 
 Now you can manage as many packages you want to export! :tada:
 
