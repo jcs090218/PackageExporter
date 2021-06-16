@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
 
-## 1.0.7
+## 1.1.0
 > Released Jun 17, 2021
 
 * Change the menu item location to `Window/Package Exporter`.
