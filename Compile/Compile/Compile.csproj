@@ -14,12 +14,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="..\..\Source\Assets\PackageExporter\Editor\EditorUtil.cs" Link="EditorUtil.cs" />
+    <Compile Include="..\..\Source\Assets\PackageExporter\Editor\PackageExporterWindow.cs" Link="PackageExporterWindow.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="UnityEditor">
       <HintPath>..\..\_references\UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\..\_references\UnityEngine.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Editor\" />
   </ItemGroup>
 
 </Project>
