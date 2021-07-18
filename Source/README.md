@@ -84,6 +84,6 @@ Export the package `Hello World`.
 
 ## License
 
-Copyright (c) Pixisoft Corporations. All rights reserved.
+Copyright (c) Pixisoft. All rights reserved.
 
 Licensed under MIT. See [LICENSE.txt](https://github.com/Pixisoft/PackageExporter/blob/master/LICENSE.txt) for details.
