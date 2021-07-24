@@ -6,6 +6,12 @@ Export multiple packages by just one click, with no need to uncheck the assets.
   <img src="./etc/package-manage.png"/>
 </p>
 
+This package is a packaging (exporting) tool for Unity package system. It
+allows you to export multiple packages with different contents.
+
+*P.S. Notice this package will only work in Editor, and does not expect user
+to use it in production builds.*
+
 ## :trophy: Features
 
 * Export multiple packages in a project
