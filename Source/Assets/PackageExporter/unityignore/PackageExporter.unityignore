@@ -11,7 +11,8 @@
 # Email: pixisoft.tw@gmail.com
 # 
 
-# Ignore the test unityignore files.
+# Ignore test unityignore files
+PackageExporter/unityignore/PackageExporter.unityignore
 PackageExporter/unityignore/Hello World.unityignore
 
 # Ignore asset store plugin
