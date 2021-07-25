@@ -1,11 +1,8 @@
 #if UNITY_EDITOR
 /**
- * $File: EditorUtil.cs $
- * $Date: 2021-04-18 16:35:05 $
- * $Revision: $
- * $Creator: Jen-Chieh Shen $
- * $Notice: See LICENSE.txt for modification and distribution information 
- *	                 Copyright © 2021 by Shen, Jen-Chieh $
+ * Copyright (c) Pixisoft. All rights reserved.
+ * 
+ * pixisoft.tw@gmail.com
  */
 using UnityEditor;
 using UnityEngine;
@@ -23,7 +20,7 @@ namespace PackageExporter
 
         public static string FormKey(string name)
         {
-            return PackageExporterWindow.NAME + "." + name;
+            return PackageExporter.NAME + "." + name;
         }
 
         public static void CreateGroup(EmptyFunction func, bool flexibleSpace = false)

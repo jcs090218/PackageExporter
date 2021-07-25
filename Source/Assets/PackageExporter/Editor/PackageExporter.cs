@@ -1,11 +1,8 @@
 ﻿#if UNITY_EDITOR
 /**
- * $File: PackageExporterWindow.cs $
- * $Date: 2017-10-23 13:58:47 $
- * $Revision: $
- * $Creator: Jen-Chieh Shen $
- * $Notice: See LICENSE.txt for modification and distribution information
- *                   Copyright (c) 2017 by Shen, Jen-Chieh $
+ * Copyright (c) Pixisoft. All rights reserved.
+ * 
+ * pixisoft.tw@gmail.com
  */
 using System;
 using System.IO;
@@ -16,13 +13,13 @@ using UnityEditor;
 namespace PackageExporter
 {
     /// <summary>
-    /// Package Exporter window.
+    /// Main control panel for this plugin.
     /// </summary>
-    public class PackageExporterWindow : EditorWindow
+    public class PackageExporter : EditorWindow
     {
         /* Variables */
 
-        public static PackageExporterWindow instance = null;
+        public static PackageExporter instance = null;
 
         public const string NAME = "Package Exporter";
 
@@ -43,6 +40,8 @@ namespace PackageExporter
         private const string REPLACE_PACKAGE_NAME = "[PACKAGE_NAME]";
         private const string REPLACE_CREATION_DATE = "[CREATION_DATE]";
         private const string REPLACE_VERSION_NO = "[VERSION_NO]";
+
+        private static int EXPORT_INDEX = 0;
 
 
         /// <summary>
@@ -136,7 +135,7 @@ namespace PackageExporter
 
                     /* Assign export button. */
                     if (GUILayout.Button("Export -> " + finalPackageName))
-                        Export(finalPackageName, ignoreList);
+                        Export(finalPackageName, ignoreList, false);
                 }
 
                 if (buttonShown >= EXPORT_ALL_PACKAGES_BUTTON_COUNT)
@@ -147,12 +146,8 @@ namespace PackageExporter
             });
         }
 
-        private static void Export(string packageName, string[] ignoreList)
+        private static void Export(string packageName, string[] ignoreList, bool exportNext)
         {
-            string ext = "unitypackage";
-
-            string savePath = EditorUtility.SaveFilePanel("Export package ...", "", packageName, ext);
-
             string[] exportList = GetAllFilesAndDirInPath();
             List<string> finalExportList = new List<string>();
 
@@ -172,58 +167,53 @@ namespace PackageExporter
                 finalExportList.Add(fixedPath);
             }
 
-            if (savePath == "")
-            {
-                Debug.Log("Invalid save path");
-                return;
-            }
-
             if (finalExportList.Count == 0)
             {
                 Debug.Log("No file is exported, it seems like you have ignore all files");
                 return;
             }
 
-            AssetDatabase.ExportPackage(
-                finalExportList.ToArray(),
-                savePath,
-                ExportPackageOptions.Default);
-
-            // show it in file explorer. (GUI)
-            EditorUtility.RevealInFinder(savePath);
+            PackageExport.ShowExportWindow(packageName, finalExportList, exportNext);
         }
 
         private static void ExportAllPackages()
         {
-            for (int index = 0; index < instance.exportPackagesList.Length; ++index)
-            {
-                ExportPackageStruct eps = instance.exportPackagesList[index];
+            EXPORT_INDEX = -1;
+            ExportNext();
+        }
 
-                /* GUI Layout */
-                string packageName = eps.packageName;
-                string versionNo = eps.versionNo;
+        public static void ExportNext()
+        {
+            ++EXPORT_INDEX;
+            if (instance.exportPackagesList.Length <= EXPORT_INDEX)
+                return;
 
-                string finalPackageName = packageName + DELIMITER + VERSION_SYMBOL + versionNo;
+            ExportPackageStruct eps = instance.exportPackagesList[EXPORT_INDEX];
 
-                if (versionNo == "")
-                    finalPackageName = packageName;
+            /* GUI Layout */
+            string packageName = eps.packageName;
+            string versionNo = eps.versionNo;
 
-                if (packageName == "")
-                    finalPackageName = DEFAULT_PACKAGE_NAME;
+            string finalPackageName = packageName + DELIMITER + VERSION_SYMBOL + versionNo;
 
-                string ignoreFilePath = Application.dataPath + "/" + IGNORE_FILE_PATH + "/";
-                string ignoreFileName = packageName + IGNORE_FILE_EXT;
-                string newIgnoreFullPath = ignoreFilePath + ignoreFileName;
+            if (versionNo == "")
+                finalPackageName = packageName;
 
-                newIgnoreFullPath = newIgnoreFullPath.Replace("\\", "/");
+            if (packageName == "")
+                finalPackageName = DEFAULT_PACKAGE_NAME;
 
-                if (!File.Exists(newIgnoreFullPath))
-                    GenerateUnityIgnoreFiles();
+            string ignoreFilePath = Application.dataPath + "/" + IGNORE_FILE_PATH + "/";
+            string ignoreFileName = packageName + IGNORE_FILE_EXT;
+            string newIgnoreFullPath = ignoreFilePath + ignoreFileName;
 
-                string[] ignoreList = ReadAllLinesWithoutComment(newIgnoreFullPath);
+            newIgnoreFullPath = newIgnoreFullPath.Replace("\\", "/");
 
-                Export(finalPackageName, ignoreList);
-            }
+            if (!File.Exists(newIgnoreFullPath))
+                GenerateUnityIgnoreFiles();
+
+            string[] ignoreList = ReadAllLinesWithoutComment(newIgnoreFullPath);
+
+            Export(finalPackageName, ignoreList, true);
         }
 
         private static void GenerateUnityIgnoreFiles()
@@ -371,7 +361,7 @@ namespace PackageExporter
         [MenuItem("Window/Package Exporter", false, 1500)]
         private static void ShowWindow()
         {
-            var window = GetWindow<PackageExporterWindow>(false, NAME, true);
+            var window = GetWindow<PackageExporter>(false, NAME, true);
             window.Show();
         }
 
