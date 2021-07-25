@@ -99,6 +99,8 @@ namespace PackageExporter
             if (GUILayout.Button(EditorGUIUtility.TrTextContent("Export...")))
             {
                 Export();
+
+                Close();
                 GUIUtility.ExitGUI();
             }
             GUILayout.Space(10);
@@ -132,10 +134,7 @@ namespace PackageExporter
             string savePath = EditorUtility.SaveFilePanel("Export package ...", "", packageName, ext);
 
             if (savePath == "")
-            {
-                Debug.Log("Invalid save path");
                 return;
-            }
 
             AssetDatabase.ExportPackage(
                 exportList.ToArray(),
