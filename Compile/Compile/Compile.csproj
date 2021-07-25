@@ -15,7 +15,9 @@
 
   <ItemGroup>
     <Compile Include="..\..\Source\Assets\PackageExporter\Editor\EditorUtil.cs" Link="EditorUtil.cs" />
-    <Compile Include="..\..\Source\Assets\PackageExporter\Editor\PackageExporterWindow.cs" Link="PackageExporterWindow.cs" />
+    <Compile Include="..\..\Source\Assets\PackageExporter\Editor\ExportTreeView.cs" Link="ExportTreeView.cs" />
+    <Compile Include="..\..\Source\Assets\PackageExporter\Editor\PackageExport.cs" Link="PackageExport.cs" />
+    <Compile Include="..\..\Source\Assets\PackageExporter\Editor\PackageExporter.cs" Link="PackageExporter.cs" />
   </ItemGroup>
 
   <ItemGroup>
