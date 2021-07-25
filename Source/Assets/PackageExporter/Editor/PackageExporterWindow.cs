@@ -1,6 +1,6 @@
 ﻿#if UNITY_EDITOR
 /**
- * $File: JCS_PE_Window.cs $
+ * $File: PackageExporterWindow.cs $
  * $Date: 2017-10-23 13:58:47 $
  * $Revision: $
  * $Creator: Jen-Chieh Shen $
@@ -18,9 +18,10 @@ namespace PackageExporter
     /// <summary>
     /// Package Exporter window.
     /// </summary>
-    public class PackageExporterWindow
-        : EditorWindow
+    public class PackageExporterWindow : EditorWindow
     {
+        /* Variables */
+
         public static PackageExporterWindow instance = null;
 
         public const string NAME = "Package Exporter";
@@ -56,6 +57,10 @@ namespace PackageExporter
 
 
         public ExportPackageStruct[] exportPackagesList = { };
+
+        /* Setter & Getter */
+
+        /* Functions */
 
 
         private void OnEnable()
@@ -146,7 +151,7 @@ namespace PackageExporter
         {
             string ext = "unitypackage";
 
-            string savePath = EditorUtility.SaveFilePanel("Save Unity Packages", "", packageName, ext);
+            string savePath = EditorUtility.SaveFilePanel("Export package ...", "", packageName, ext);
 
             string[] exportList = GetAllFilesAndDirInPath();
             List<string> finalExportList = new List<string>();
@@ -167,9 +172,17 @@ namespace PackageExporter
                 finalExportList.Add(fixedPath);
             }
 
-            if (savePath == "" || finalExportList.Count == 0)
+            if (savePath == "")
+            {
+                Debug.Log("Invalid save path");
                 return;
+            }
 
+            if (finalExportList.Count == 0)
+            {
+                Debug.Log("No file is exported, it seems like you have ignore all files");
+                return;
+            }
 
             AssetDatabase.ExportPackage(
                 finalExportList.ToArray(),
@@ -182,9 +195,7 @@ namespace PackageExporter
 
         private static void ExportAllPackages()
         {
-            for (int index = 0;
-               index < instance.exportPackagesList.Length;
-               ++index)
+            for (int index = 0; index < instance.exportPackagesList.Length; ++index)
             {
                 ExportPackageStruct eps = instance.exportPackagesList[index];
 
@@ -221,9 +232,7 @@ namespace PackageExporter
             string ignoreFileTemplatePath = ignoreTemplatePath + IGNORE_FILE_TEMPLATE_FILE;
             string[] templateLines = File.ReadAllLines(ignoreFileTemplatePath);
 
-            for (int index = 0;
-                index < instance.exportPackagesList.Length;
-                ++index)
+            for (int index = 0; index < instance.exportPackagesList.Length; ++index)
             {
                 ExportPackageStruct eps = instance.exportPackagesList[index];
 
@@ -362,7 +371,7 @@ namespace PackageExporter
         [MenuItem("Window/Package Exporter", false, 1500)]
         private static void ShowWindow()
         {
-            PackageExporterWindow window = GetWindow<PackageExporterWindow>(false, NAME, true);
+            var window = GetWindow<PackageExporterWindow>(false, NAME, true);
             window.Show();
         }
 
