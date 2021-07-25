@@ -48,7 +48,7 @@ namespace PackageExporter
             var dirs = new Dictionary<string, TreeViewItem>();
             int id = 1;
 
-            // Sort it by filename, so it looks nicer
+            // Sort by name, so it looks nicer
             var sorted = mPackageExport.exportList.OrderBy(f => f);
 
             foreach (var file in sorted)
