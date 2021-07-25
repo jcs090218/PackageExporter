@@ -1,15 +1,15 @@
-# 
-# Thank you for using `Package Exporter`. This is the generated 
+#
+# Thank you for using `Package Exporter`. This is the generated
 # unityignore file.
-# 
+#
 # Package Name: PackageExporter
 # Version: 1.0.1
-# Creation Date: 2019-02-04 19:48:05 
-# 
+# Creation Date: 2019-02-04 19:48:05
+#
 # Package Link: https://github.com/Pixisoft/PackageExporter
 # Author: Shen, Jen-Chieh
 # Email: pixisoft.tw@gmail.com
-# 
+#
 
 # Ignore test unityignore files
 PackageExporter/unityignore/PackageExporter.unityignore
