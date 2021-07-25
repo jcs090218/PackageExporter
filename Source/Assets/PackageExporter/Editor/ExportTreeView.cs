@@ -6,6 +6,7 @@
  */
 using System.IO;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 using UnityEditorInternal;
@@ -47,7 +48,10 @@ namespace PackageExporter
             var dirs = new Dictionary<string, TreeViewItem>();
             int id = 1;
 
-            foreach (var file in mPackageExport.exportList)
+            // Sort it by filename, so it looks nicer
+            var sorted = mPackageExport.exportList.OrderBy(f => f);
+
+            foreach (var file in sorted)
             {
                 // Get path to walk through
                 string[] folders = file.Split('/');
