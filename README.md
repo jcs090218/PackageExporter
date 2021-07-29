@@ -2,7 +2,6 @@
 the full documentation.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/github/release/Pixisoft/PackageExporter.svg?logo=github)](https://github.com/Pixisoft/UnityPackageExporter/releases/latest)
 [![Unity Engine](https://img.shields.io/badge/unity-2021.1.1f1-black.svg?style=flat&logo=unity&cacheSeconds=2592000)](https://unity3d.com/get-unity/download/archive)
 [![CI](https://github.com/Pixisoft/PackageExporter/actions/workflows/build.yml/badge.svg)](https://github.com/Pixisoft/PackageExporter/actions/workflows/build.yml)
 
