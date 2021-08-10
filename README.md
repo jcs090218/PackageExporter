@@ -9,7 +9,7 @@ the full documentation.**
 
 #### Source
 
-* `Source` -  Project contains plugin's source code.
+* `Source` - Project contains plugin's source code.
 
 #### Compiling
 
