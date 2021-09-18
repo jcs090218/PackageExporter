@@ -35,9 +35,9 @@ namespace PackageExporter
 
         public static void Export()
         {
-            string name = GetArg("-name");
-            string version = GetArg("-version");
-            string savePath = GetArg("-savePath");
+            string name = GetArg("-pkgName");
+            string version = GetArg("-pkgVersion");
+            string savePath = GetArg("-pkgSavePath");
 
             if (name == null || version == null || savePath == null)
                 return;
