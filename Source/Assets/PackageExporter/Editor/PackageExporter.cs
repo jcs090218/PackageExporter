@@ -61,7 +61,6 @@ namespace PackageExporter
 
         /* Functions */
 
-
         private void OnEnable()
         {
             instance = this;
@@ -70,6 +69,19 @@ namespace PackageExporter
         private void OnGUI()
         {
             OnEP_Editor();
+        }
+
+        private static string FormPackageName(string name, string version)
+        {
+            string finalPackageName = name + DELIMITER + VERSION_SYMBOL + version;
+
+            if (version == "")
+                finalPackageName = name;
+
+            if (name == "")
+                finalPackageName = DEFAULT_PACKAGE_NAME;
+
+            return finalPackageName;
         }
 
         /// <summary>
@@ -109,33 +121,16 @@ namespace PackageExporter
                     ExportPackageStruct eps = instance.exportPackagesList[index];
 
                     /* GUI Layout */
-                    string packageName = eps.packageName;
-                    string versionNo = eps.versionNo;
+                    string name = eps.packageName;
+                    string version = eps.versionNo;
 
-                    string finalPackageName = packageName + DELIMITER + VERSION_SYMBOL + versionNo;
-
-                    if (versionNo == "")
-                        finalPackageName = packageName;
-
-                    if (packageName == "")
-                        finalPackageName = DEFAULT_PACKAGE_NAME;
-
-                    string ignoreFilePath = Application.dataPath + "/" + IGNORE_FILE_PATH + "/";
-                    string ignoreFileName = packageName + IGNORE_FILE_EXT;
-                    string newIgnoreFullPath = ignoreFilePath + ignoreFileName;
-
-                    newIgnoreFullPath = newIgnoreFullPath.Replace("\\", "/");
-
-                    if (!File.Exists(newIgnoreFullPath))
-                        continue;
-
-                    string[] ignoreList = ReadAllLinesWithoutComment(newIgnoreFullPath);
+                    string finalPackageName = FormPackageName(name, version);
 
                     ++buttonShown;
 
                     /* Assign export button. */
                     if (GUILayout.Button("Export -> " + finalPackageName))
-                        Export(finalPackageName, ignoreList, false);
+                        Export(name, version);
                 }
 
                 if (buttonShown >= EXPORT_ALL_PACKAGES_BUTTON_COUNT)
@@ -146,8 +141,28 @@ namespace PackageExporter
             });
         }
 
-        private static void Export(string packageName, string[] ignoreList, bool exportNext)
+        /// <summary>
+        /// Export the package.
+        /// </summary>
+        /// <param name="name"> Name of the package. </param>
+        /// <param name="version"> Version of the package. </param>
+        /// <param name="savePath"> Output directory. (optional) </param>
+        /// <param name="next"> True if iterate through the whole package list. </param>
+        public static void Export(string name, string version, string savePath = null, bool next = false)
         {
+            string finalPackageName = FormPackageName(name, version);
+
+            string ignoreFilePath = Application.dataPath + "/" + IGNORE_FILE_PATH + "/";
+            string ignoreFileName = name + IGNORE_FILE_EXT;
+            string newIgnoreFullPath = ignoreFilePath + ignoreFileName;
+
+            newIgnoreFullPath = newIgnoreFullPath.Replace("\\", "/");
+
+            if (!File.Exists(newIgnoreFullPath))
+                return;
+
+            string[] ignoreList = ReadAllLinesWithoutComment(newIgnoreFullPath);
+
             string[] exportList = GetAllFilesAndDirInPath();
             List<string> finalExportList = new List<string>();
 
@@ -173,7 +188,18 @@ namespace PackageExporter
                 return;
             }
 
-            PackageExport.ShowExportWindow(packageName, finalExportList, exportNext);
+            if (savePath == null)
+                PackageExport.ShowExportWindow(finalPackageName, finalExportList, next);
+            else
+            {
+                string ext = ".unitypackage";
+                savePath = Path.Combine(savePath, finalPackageName + ext);
+
+                AssetDatabase.ExportPackage(
+                    finalExportList.ToArray(),
+                    savePath,
+                    ExportPackageOptions.Default);
+            }
         }
 
         private static void ExportAllPackages()
@@ -194,26 +220,7 @@ namespace PackageExporter
             string packageName = eps.packageName;
             string versionNo = eps.versionNo;
 
-            string finalPackageName = packageName + DELIMITER + VERSION_SYMBOL + versionNo;
-
-            if (versionNo == "")
-                finalPackageName = packageName;
-
-            if (packageName == "")
-                finalPackageName = DEFAULT_PACKAGE_NAME;
-
-            string ignoreFilePath = Application.dataPath + "/" + IGNORE_FILE_PATH + "/";
-            string ignoreFileName = packageName + IGNORE_FILE_EXT;
-            string newIgnoreFullPath = ignoreFilePath + ignoreFileName;
-
-            newIgnoreFullPath = newIgnoreFullPath.Replace("\\", "/");
-
-            if (!File.Exists(newIgnoreFullPath))
-                GenerateUnityIgnoreFiles();
-
-            string[] ignoreList = ReadAllLinesWithoutComment(newIgnoreFullPath);
-
-            Export(finalPackageName, ignoreList, true);
+            Export(packageName, versionNo, null, true);
         }
 
         private static void GenerateUnityIgnoreFiles()
@@ -336,7 +343,7 @@ namespace PackageExporter
             // We use this to get rid of the first part of the path.
             // Cuz all path includes `Assets/` infront!
             const string assetPath = "Assets/";
-            
+
             foreach (string ignorePath in ignoreList)
             {
                 // Path we use to compare.
@@ -387,9 +394,7 @@ namespace PackageExporter
 
             List<string> cleanLine = new List<string>();
 
-            for (int count = 0;
-                count < allLine.Length;
-                ++count)
+            for (int count = 0; count < allLine.Length; ++count)
             {
                 string line = allLine[count];
 
@@ -416,9 +421,7 @@ namespace PackageExporter
             if (line == "")
                 return true;
 
-            for (int index = 0;
-                index < line.Length;
-                ++index)
+            for (int index = 0; index < line.Length; ++index)
             {
                 var ch = line[index];
 
