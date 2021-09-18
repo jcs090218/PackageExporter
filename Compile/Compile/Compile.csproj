@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="..\..\Source\Assets\PackageExporter\Editor\BatchMode.cs" Link="BatchMode.cs" />
     <Compile Include="..\..\Source\Assets\PackageExporter\Editor\EditorUtil.cs" Link="EditorUtil.cs" />
     <Compile Include="..\..\Source\Assets\PackageExporter\Editor\ExportTreeView.cs" Link="ExportTreeView.cs" />
     <Compile Include="..\..\Source\Assets\PackageExporter\Editor\PackageExport.cs" Link="PackageExport.cs" />
