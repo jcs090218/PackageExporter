@@ -5,12 +5,17 @@ All notable changes to this project will be documented in this file.
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
 
+## 1.2.1 (Unreleased)
+> Released N/A
+
+* Support batch mode CLI.
+
 ## 1.2.0
 > Released Jul 25, 2021
 
 * Organize and clean up ignore files.
 * Add preview before exporting to disk.
-* Sort file by name, so it matches the Unity's file system
+* Sort file by name, so it matches the Unity's file system.
 
 ## 1.1.0
 > Released Jun 17, 2021
