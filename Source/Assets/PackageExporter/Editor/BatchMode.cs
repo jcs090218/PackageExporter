@@ -23,11 +23,11 @@ namespace PackageExporter
         private static string GetArg(string name)
         {
             var args = Environment.GetCommandLineArgs();
-            for (int i = 0; i < args.Length; i++)
+            for (int index = 0; index < args.Length; ++index)
             {
-                if (args[i] == name && args.Length > i + 1)
+                if (args[index] == name && args.Length > index + 1)
                 {
-                    return args[i + 1];
+                    return args[index + 1];
                 }
             }
             return null;
@@ -38,6 +38,9 @@ namespace PackageExporter
             string name = GetArg("-name");
             string version = GetArg("-version");
             string savePath = GetArg("-savePath");
+
+            if (name == null || version == null || savePath == null)
+                return;
 
             savePath = Path.GetFullPath(savePath);
             PackageExporter.Export(name, version, savePath);
