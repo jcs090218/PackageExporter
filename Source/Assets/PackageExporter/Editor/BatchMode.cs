@@ -33,6 +33,9 @@ namespace PackageExporter
             return null;
         }
 
+        /// <summary>
+        /// Export package by unityignore name.
+        /// </summary>
         public static void Export()
         {
             string name = GetArg("--name");
