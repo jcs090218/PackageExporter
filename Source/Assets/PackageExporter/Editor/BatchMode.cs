@@ -20,7 +20,7 @@ namespace PackageExporter
 
         /* Functions */
 
-        private static string GetArg(string name)
+        private static string GetArg(string name, string defaultValue = null)
         {
             var args = Environment.GetCommandLineArgs();
             for (int index = 0; index < args.Length; ++index)
@@ -30,7 +30,17 @@ namespace PackageExporter
                     return args[index + 1];
                 }
             }
-            return null;
+            return defaultValue;
+        }
+
+        private static bool CheckNull(params object[] vars)
+        {
+            foreach (var obj in vars)
+            {
+                if (obj == null)
+                    return true;
+            }
+            return false;
         }
 
         /// <summary>
@@ -42,7 +52,7 @@ namespace PackageExporter
             string version = GetArg("--version");
             string savePath = GetArg("--savePath");
 
-            if (name == null || version == null || savePath == null)
+            if (CheckNull(name, version, savePath))
                 return;
 
             savePath = Path.GetFullPath(savePath);
