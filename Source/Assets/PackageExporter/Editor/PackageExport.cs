@@ -136,13 +136,7 @@ namespace PackageExporter
             if (savePath == "")
                 return;
 
-            AssetDatabase.ExportPackage(
-                exportList.ToArray(),
-                savePath,
-                ExportPackageOptions.Default);
-
-            // show it in file explorer. (GUI)
-            EditorUtility.RevealInFinder(savePath);
+            PackageExporter.ExportPackage(exportList, savePath);
         }
     }
 }

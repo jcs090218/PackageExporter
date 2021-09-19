@@ -195,10 +195,7 @@ namespace PackageExporter
                 string ext = ".unitypackage";
                 savePath = Path.Combine(savePath, finalPackageName + ext);
 
-                AssetDatabase.ExportPackage(
-                    finalExportList.ToArray(),
-                    savePath,
-                    ExportPackageOptions.Default);
+                ExportPackage(finalExportList, savePath);
             }
         }
 
@@ -221,6 +218,19 @@ namespace PackageExporter
             string versionNo = eps.versionNo;
 
             Export(packageName, versionNo, null, true);
+        }
+
+        public static void ExportPackage(List<string> exportList, string savePath)
+        {
+            ExportPackage(exportList.ToArray(), savePath);
+        }
+
+        public static void ExportPackage(string[] exportList, string savePath)
+        {
+            AssetDatabase.ExportPackage(exportList, savePath, ExportPackageOptions.Default);
+
+            // show it in file explorer. (GUI)
+            EditorUtility.RevealInFinder(savePath);
         }
 
         private static void GenerateUnityIgnoreFiles()
