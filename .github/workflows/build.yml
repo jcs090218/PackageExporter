@@ -5,7 +5,6 @@ on:
   push: { branches: [main, master, develop] }
 
 env:
-  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
   UNITY_VERSION: 2021.1.1f1
   PROJECT_PATH: ./Source
   ULF_FILE: Unity_v2021.x.ulf
@@ -17,7 +16,6 @@ jobs:
     outputs:
       alf: ${{ steps.output.outputs.alf }}
     steps:
-      # Request manual activation file
       - name: Request manual activation file
         id: alfFile
         uses: game-ci/unity-request-activation-file@main
@@ -36,9 +34,9 @@ jobs:
         run: |
           echo "::set-output name=alf::${{ steps.alfFile.outputs.filePath }}"
 
-  activation:
+  acquire_ulf:
     needs: [request_alf]
-    name: Activate activation file 🔑
+    name: Acquire .ulf file 🔑
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -84,7 +82,7 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
 
   checklicense:
-    needs: [activation]
+    needs: [acquire_ulf]
     name: check if UNITY_LICENSE is set in github secrets
     runs-on: ubuntu-latest
     outputs:
@@ -93,8 +91,8 @@ jobs:
       - name: Check whether unity activation requests should be done
         id: checklicense_job
         run: |
-            echo "Skip activation job: ${{ env.UNITY_LICENSE != '' }}"
-            echo "::set-output name=is_unity_license_set::${{ env.UNITY_LICENSE != '' }}"
+            echo "Skip activation job: ${{ secrets.UNITY_LICENSE != '' }}"
+            echo "::set-output name=is_unity_license_set::${{ secrets.UNITY_LICENSE != '' }}"
 
   test:
     needs: [checklicense]
