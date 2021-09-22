@@ -122,9 +122,7 @@ jobs:
         id: testRunner
         with:
           projectPath: ${{ env.PROJECT_PATH }}
-          unityVersion: ${{ env.UNITY_VERSION }}
-          customParameters: "-nographics"
-          args: --name "${{ matrix.package-name }}" --version "${{ env.NEXT_VERSION }}" --savePath "." -executeMethod ${{ env.BUILD_METHOD }}
+          customParameters: --name "${{ matrix.package-name }}" --version "${{ env.NEXT_VERSION }}" --savePath "." -executeMethod ${{ env.BUILD_METHOD }}
 
       - name: Print current directory
         run: ls -a ${{ env.PROJECT_PATH }}
