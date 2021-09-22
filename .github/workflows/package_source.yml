@@ -1,4 +1,4 @@
-name: Package
+name: Package Source
 
 on:
   pull_request: {}
