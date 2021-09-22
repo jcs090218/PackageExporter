@@ -110,12 +110,19 @@ jobs:
         with:
           lfs: true
 
-      - uses: pCYSl5EDgo/setup-unity@master
+      - uses: actions/cache@v1.1.0
         with:
-          unity-version: UNITY_VERSION
+          path: Library
+          key: Library-test-project-${{ matrix.targetPlatform }}
+          restore-keys: |
+            Library-test-project-
+            Library-
 
-      - name: Run arguments
-        run: /opt/Unity/Editor/Unity --name "${{ matrix.package-name }}" --version "${{ env.NEXT_VERSION }}" --savePath "." -executeMethod ${{ env.BUILD_METHOD }}
+      - uses: game-ci/unity-builder@master
+        with:
+          projectPath: ${{ env.PROJECT_PATH }}
+          unityVersion: ${{ env.UNITY_VERSION }}
+          customParameters: "-nographics --name "${{ matrix.package-name }}" --version "${{ env.NEXT_VERSION }}" --savePath "." -executeMethod ${{ env.BUILD_METHOD }}"
 
       - name: Print current directory
         run: ls -a ${{ env.PROJECT_PATH }}
