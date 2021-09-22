@@ -122,7 +122,7 @@ jobs:
         id: testRunner
         with:
           projectPath: ${{ env.PROJECT_PATH }}
-          customParameters: -nographics -batchmode -quit --name "${{ matrix.package-name }}" --version "${{ env.NEXT_VERSION }}" --savePath "." -executeMethod ${{ env.BUILD_METHOD }}
+          customParameters: -nographics
 
       - name: Run arguments
         run: unity-editor --name "${{ matrix.package-name }}" --version "${{ env.NEXT_VERSION }}" --savePath "." -executeMethod ${{ env.BUILD_METHOD }}
