@@ -110,20 +110,9 @@ jobs:
         with:
           lfs: true
 
-      - uses: actions/cache@v1.1.0
+      - uses: pCYSl5EDgo/setup-unity@master
         with:
-          path: Library
-          key: Library-test-project-${{ matrix.targetPlatform }}
-          restore-keys: |
-            Library-test-project-
-            Library-
-
-      - uses: game-ci/unity-test-runner@master
-        id: testRunner
-        with:
-          projectPath: ${{ env.PROJECT_PATH }}
-          unityVersion: ${{ env.UNITY_VERSION }}
-          customParameters: "-nographics"
+          unity-version: UNITY_VERSION
 
       - name: Run arguments
         run: /opt/Unity/Editor/Unity --name "${{ matrix.package-name }}" --version "${{ env.NEXT_VERSION }}" --savePath "." -executeMethod ${{ env.BUILD_METHOD }}
