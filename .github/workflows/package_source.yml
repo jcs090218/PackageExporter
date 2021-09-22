@@ -118,11 +118,12 @@ jobs:
             Library-test-project-
             Library-
 
-      - uses: game-ci/unity-builder@master
+      - uses: game-ci/unity-builder@v2.0-alpha-13
         with:
           projectPath: ${{ env.PROJECT_PATH }}
           unityVersion: ${{ env.UNITY_VERSION }}
-          customParameters: "-nographics --name "${{ matrix.package-name }}" --version "${{ env.NEXT_VERSION }}" --savePath "." -executeMethod ${{ env.BUILD_METHOD }}"
+          targetPlatform: ${{ matrix.targetPlatform }}
+          customParameters: -nographics --name "${{ matrix.package-name }}" --version "${{ env.NEXT_VERSION }}" --savePath "." -executeMethod ${{ env.BUILD_METHOD }}
 
       - name: Print current directory
         run: ls -a ${{ env.PROJECT_PATH }}
