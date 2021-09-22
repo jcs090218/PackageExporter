@@ -1,4 +1,4 @@
-name: Package Publish
+name: 📦 Publish
 
 on:
   pull_request: {}
