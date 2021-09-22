@@ -3,8 +3,8 @@ the full documentation.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Unity Engine](https://img.shields.io/badge/unity-2021.1.1f1-black.svg?style=flat&logo=unity&cacheSeconds=2592000)](https://unity3d.com/get-unity/download/archive)
-[![Build Source](https://github.com/Pixisoft/PackageExporter/actions/workflows/build_source.yml/badge.svg)](https://github.com/Pixisoft/NovBundle/actions/workflows/build_source.yml)
-[![Build Publish](https://github.com/Pixisoft/PackageExporter/actions/workflows/build_publish.yml/badge.svg)](https://github.com/Pixisoft/NovBundle/actions/workflows/build_publish.yml)
+[![Build Source](https://github.com/Pixisoft/PackageExporter/actions/workflows/build_source.yml/badge.svg)](https://github.com/Pixisoft/PackageExporter/actions/workflows/build_source.yml)
+[![Build Publish](https://github.com/Pixisoft/PackageExporter/actions/workflows/build_publish.yml/badge.svg)](https://github.com/Pixisoft/PackageExporter/actions/workflows/build_publish.yml)
 [![Package](https://github.com/Pixisoft/PackageExporter/actions/workflows/package.yml/badge.svg)](https://github.com/Pixisoft/PackageExporter/actions/workflows/package.yml)
 
 ---
