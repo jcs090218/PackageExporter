@@ -125,3 +125,12 @@ jobs:
           unityVersion: ${{ env.UNITY_VERSION }}
           customParameters: "-nographics"
           args: --name "${{ matrix.package-name }}" --version "${{ env.NEXT_VERSION }}" --savePath "." -executeMethod ${{ env.BUILD_METHOD }}
+
+      - name: Print current directory
+        run: ls
+
+      - name: Upload package as artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: ${{ matrix.package-name }}
+          path: ${{ matrix.package-name }}
