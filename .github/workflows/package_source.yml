@@ -16,15 +16,15 @@ jobs:
   package:
     name: Package all packages
     runs-on: ubuntu-latest
-    container: unityci/editor:ubuntu-2021.1.21f1-android-0.15.0
     strategy:
+      fail-fast: false
       matrix:
         package-name:
           - PackageExporter
         targetPlatform:
           - StandaloneLinux64
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
         with:
           lfs: true
 
