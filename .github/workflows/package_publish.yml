@@ -22,7 +22,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        matrix:
         package-name:
           - PackageExporter_DLL
         targetPlatform:
