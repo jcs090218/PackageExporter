@@ -1,4 +1,4 @@
-name: 📦 Publish
+name: Source 📦
 
 on:
   pull_request: {}
@@ -10,9 +10,9 @@ env:
   ULF_FILE: Unity_v2021.x.ulf
   # Project
   UNITY_VERSION: 2021.1.1f1
-  PROJECT_PATH: ./Publish
+  PROJECT_PATH: ./Source
   # Packaging
-  PKG_VERSION: 1.3.0
+  PKG_VERSION: 0.2.2
   BUILD_METHOD: PackageExporter.BatchMode.Export
 
 jobs:
@@ -23,7 +23,7 @@ jobs:
       fail-fast: false
       matrix:
         package-name:
-          - PackageExporter_DLL
+          - NovBundle
         targetPlatform:
           - StandaloneWindows64
     steps:
