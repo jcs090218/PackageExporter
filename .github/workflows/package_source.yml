@@ -19,7 +19,10 @@ jobs:
     container: unityci/editor:ubuntu-2021.1.21f1-android-0.15.0
     strategy:
       matrix:
-        package-name: ['PackageExporter']
+        package-name:
+          - PackageExporter
+        targetPlatform:
+          - StandaloneLinux64
     steps:
       - uses: actions/checkout@v2
         with:
@@ -38,7 +41,8 @@ jobs:
           projectPath: ${{ env.PROJECT_PATH }}
           unityVersion: ${{ env.UNITY_VERSION }}
           targetPlatform: ${{ matrix.targetPlatform }}
-          customParameters: -nographics --name "${{ matrix.package-name }}" --version "${{ env.NEXT_VERSION }}" --savePath "." -executeMethod ${{ env.BUILD_METHOD }}
+          buildMethod: ${{ env.BUILD_METHOD }}
+          customParameters: -nographics --name "${{ matrix.package-name }}" --version "${{ env.NEXT_VERSION }}" --savePath "."
 
       - name: Print current directory
         run: ls -a ${{ env.PROJECT_PATH }}
