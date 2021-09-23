@@ -17,7 +17,7 @@ env:
 
 jobs:
   package:
-    name: Package - ${{ matrix.package-name }}
+    name: Package <${{ matrix.package-name }}>
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
