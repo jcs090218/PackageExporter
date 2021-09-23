@@ -17,7 +17,7 @@ env:
 
 jobs:
   package:
-    name: Package all packages
+    name: Package - ${{ matrix.package-name }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -47,7 +47,7 @@ jobs:
           buildMethod: ${{ env.BUILD_METHOD }}
           customParameters: -nographics --name "${{ matrix.package-name }}" --version "${{ env.PKG_VERSION }}" --savePath "."
 
-      - name: Upload `${{ matrix.package-name }}` as artifact
+      - name: Upload package as artifact
         uses: actions/upload-artifact@v1
         with:
           name: ${{ matrix.package-name }}_v${{ env.PKG_VERSION }}.unitypackage
