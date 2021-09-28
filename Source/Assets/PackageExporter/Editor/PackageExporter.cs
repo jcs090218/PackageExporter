@@ -43,19 +43,20 @@ namespace PackageExporter
 
         private static int EXPORT_INDEX = 0;
 
-
         /// <summary>
         /// Structure of the export packages.
         /// </summary>
         [Serializable]
-        public struct ExportPackageStruct
+        public struct ExportPackageInfo
         {
             public string packageName;
             public string versionNo;
         };
 
+        public ExportPackageInfo[] exportPackagesList = { };
 
-        public ExportPackageStruct[] exportPackagesList = { };
+        private SerializedObject mSerializedObject = null;
+        private SerializedProperty mSerializedProperty = null;
 
         /* Setter & Getter */
 
@@ -64,6 +65,8 @@ namespace PackageExporter
         private void OnEnable()
         {
             instance = this;
+            mSerializedObject = new SerializedObject(this);
+            mSerializedProperty = mSerializedObject.FindProperty("exportPackagesList");
         }
 
         private void OnGUI()
@@ -94,12 +97,11 @@ namespace PackageExporter
             /* Export the whole list. */
             EditorUtil.CreateGroup(() =>
             {
-                ScriptableObject target = this;
-                SerializedObject so = new SerializedObject(target);
-                SerializedProperty stringsProperty = so.FindProperty("exportPackagesList");
+                mSerializedObject.Update();
 
-                EditorGUILayout.PropertyField(stringsProperty, true);
-                so.ApplyModifiedProperties();
+                EditorGUILayout.PropertyField(mSerializedProperty, true);
+
+                mSerializedObject.ApplyModifiedProperties();
             });
 
             GUILayout.Label("Unity Ignore File", EditorStyles.boldLabel);
@@ -118,7 +120,7 @@ namespace PackageExporter
             {
                 for (int index = 0; index < instance.exportPackagesList.Length; ++index)
                 {
-                    ExportPackageStruct eps = instance.exportPackagesList[index];
+                    ExportPackageInfo eps = instance.exportPackagesList[index];
 
                     /* GUI Layout */
                     string name = eps.packageName;
@@ -211,7 +213,7 @@ namespace PackageExporter
             if (instance.exportPackagesList.Length <= EXPORT_INDEX)
                 return;
 
-            ExportPackageStruct eps = instance.exportPackagesList[EXPORT_INDEX];
+            ExportPackageInfo eps = instance.exportPackagesList[EXPORT_INDEX];
 
             /* GUI Layout */
             string packageName = eps.packageName;
@@ -241,7 +243,7 @@ namespace PackageExporter
 
             for (int index = 0; index < instance.exportPackagesList.Length; ++index)
             {
-                ExportPackageStruct eps = instance.exportPackagesList[index];
+                ExportPackageInfo eps = instance.exportPackagesList[index];
 
                 string packageName = eps.packageName;
                 string versionNo = eps.versionNo;
