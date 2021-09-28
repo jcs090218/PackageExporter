@@ -5,10 +5,16 @@ All notable changes to this project will be documented in this file.
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
 
-## 1.3.0 (Unreleased)
+## 1.4.0 (Unreleased)
 > Released N/A
 
+* N/A
+
+## 1.3.0
+> Released Sep 28, 2021
+
 * Support batch mode CLI.
+* Fix property value not applying issue.
 
 ## 1.2.0
 > Released Jul 25, 2021
