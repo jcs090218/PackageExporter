@@ -5,10 +5,15 @@ All notable changes to this project will be documented in this file.
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
 
-## 1.4.0 (Unreleased)
+## 1.4.1 (Unreleased)
 > Released N/A
 
 * N/A
+
+## 1.4.0
+> Released Nov 1, 2021
+
+* Changed argument prefix to `_` instead of `--`.
 
 ## 1.3.0
 > Released Sep 28, 2021
