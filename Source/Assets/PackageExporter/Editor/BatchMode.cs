@@ -48,9 +48,9 @@ namespace PackageExporter
         /// </summary>
         public static void Export()
         {
-            string name = GetArg("--name");
-            string version = GetArg("--version");
-            string savePath = GetArg("--savePath");
+            string name = GetArg("_name");
+            string version = GetArg("_version");
+            string savePath = GetArg("_savePath");
 
             if (CheckNull(name, version, savePath))
                 return;
