@@ -9,14 +9,20 @@ using UnityEngine;
 
 namespace PackageExporter
 {
-    public delegate void EmptyFunction();
-
     /// <summary>
     /// Utility for Editor Layout
     /// </summary>
     public static class EditorUtil
     {
+        public delegate void EmptyFunction();
+
+        /* Variables */
+
         private const int INDENT_LEVEL = 0;  // default to 1
+
+        /* Setter & Getter */
+
+        /* Functions */
 
         public static string FormKey(string name)
         {
