@@ -8,7 +8,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## 1.4.1 (Unreleased)
 > Released N/A
 
-* N/A
+* Moved delegates to class level.
 
 ## 1.4.0
 > Released Nov 1, 2021
