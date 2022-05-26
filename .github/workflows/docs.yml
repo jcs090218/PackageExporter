@@ -6,6 +6,7 @@ on:
 
 env:
   REPO_DOC: 'Pixisoft/Documents'
+  BRANCH: 'gh-pages'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -36,7 +37,7 @@ jobs:
         repository: ${{ env.REPO_DOC }}
         persist-credentials: false
         fetch-depth: 0
-        ref: 'gh-pages'
+        ref: ${{ env.BRANCH }}
 
     - name: Move book to repository
       run: |
@@ -62,5 +63,5 @@ jobs:
       with:
         repository: ${{ env.REPO_DOC }}
         github_token: ${{ secrets.ACCESS_TOKEN }}
-        branch: 'gh-pages'
+        branch: ${{ env.BRANCH }}
         retry: 7
