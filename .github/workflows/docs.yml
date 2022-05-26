@@ -58,8 +58,9 @@ jobs:
 
     - name: Push book
       continue-on-error: true
-      uses: ad-m/github-push-action@master
+      uses: jcs090218/github-push-action@master
       with:
         repository: ${{ env.REPO_DOC }}
         github_token: ${{ secrets.ACCESS_TOKEN }}
-        branch: master
+        branch: 'gh-pages'
+        retry: 7
