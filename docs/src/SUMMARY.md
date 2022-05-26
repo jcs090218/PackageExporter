@@ -1,5 +1,5 @@
 # Summary
 
-- [Overview](./Overview/README.md)
-- [FAQ](./FAQ/README.md)
-- [License](./License/README.md)
+- [Overview](./Overview.md)
+- [FAQ](./FAQ.md)
+- [License](./License.md)
