@@ -1,0 +1,46 @@
+name: Docs
+
+on:
+  pull_request: {}
+  push: { branches: [main, master, develop] }
+
+env:
+  REPO_DOC: 'Pixisoft/Documents'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  publish_doc:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup mdBook
+      uses: peaceiris/actions-mdbook@v1
+      with:
+        mdbook-version: 'latest'
+
+    - name: Change workspace
+      run: cd docs
+
+    - name: Build doc
+      run: mdbook build
+
+    - name: Move book to home
+      run: mv ./book/ ~/
+
+    - name: Checkout document repository
+      uses: actions/checkout@v3
+      with:
+        repository: ${{ env.REPO_DOC }}
+        persist-credentials: false
+        fetch-depth: 0
+        ref: 'gh-pages'
+
+    - name: Move book to repository
+      run: |
+        echo ${{ github.event.repository.name }}
+        mkdir ${{ github.event.repository.name }}
+        mv -f ~/book/* ./${{ github.event.repository.name }}/
