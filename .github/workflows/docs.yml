@@ -41,7 +41,7 @@ jobs:
 
     - name: Move book to repository
       run: |
-        echo ${{ github.event.repository.name }}
+        rm -rf ${{ github.event.repository.name }}
         mkdir ${{ github.event.repository.name }}
         mv -f ~/book/* ./${{ github.event.repository.name }}/
 
