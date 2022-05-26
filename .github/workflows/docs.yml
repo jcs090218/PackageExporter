@@ -22,13 +22,12 @@ jobs:
       with:
         mdbook-version: 'latest'
 
-    - name: Change workspace
-      run: cd docs
-
     - name: Build doc
+      working-directory: docs
       run: mdbook build
 
     - name: Move book to home
+      working-directory: docs
       run: mv ./book/ ~/
 
     - name: Checkout document repository
