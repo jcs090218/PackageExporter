@@ -8,6 +8,7 @@
 [![Source 📦](https://github.com/Pixisoft/PackageExporter/actions/workflows/source_package.yml/badge.svg)](https://github.com/Pixisoft/PackageExporter/actions/workflows/source_package.yml)
 [![Publish ⚙️](https://github.com/Pixisoft/PackageExporter/actions/workflows/publish_build.yml/badge.svg)](https://github.com/Pixisoft/PackageExporter/actions/workflows/publish_build.yml)
 [![Publish 📦](https://github.com/Pixisoft/PackageExporter/actions/workflows/publish_package.yml/badge.svg)](https://github.com/Pixisoft/PackageExporter/actions/workflows/publish_package.yml)
+[![Docs](https://github.com/Pixisoft/PackageExporter/actions/workflows/docs.yml/badge.svg)](https://github.com/Pixisoft/PackageExporter/actions/workflows/docs.yml)
 
 Export multiple packages by just one click, with no need to uncheck the assets.
 
