@@ -27,7 +27,7 @@ Here explains how you use this package correctly.
 ### 🔍 Step 1. Import Package
 
 You will need to import the package to your project. The package
-can be download from [here](https://github.com/Pixisoft/PackageExporter/releases).
+can be downloaded from [here](https://github.com/jcs090218/PackageExporter/releases).
 
 ### 🔍 Step 2. Start using Package Exporter Window
 
@@ -66,9 +66,9 @@ Generated `.unityignore` file for `Hello World` package.
 # Version: 1.0.0
 # Creation Date: 2017-10-25 06:58:14
 #
-# Package Link: https://github.com/Pixisoft/PackageExporter
+# Package Link: https://github.com/jcs090218/PackageExporter
 # Author: Shen, Jen-Chieh
-# Email: pixisoft.tw@gmail.com
+# Email: jcs090218@gmail.com
 #
 
 # Ignore this plugin itself.

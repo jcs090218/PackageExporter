@@ -1,11 +1,9 @@
 # License
 
-Copyright (c) Pixisoft. All rights reserved.
-
 ```
 MIT License
 
-Copyright (c) Pixisoft Corporation.
+Copyright (c) 2017-2022 Jen-Chieh Shen
 
 Permission is hereby granted, free of charge, to any person obtaining a copy 
 of this software and associated documentation files (the "Software"), to deal 

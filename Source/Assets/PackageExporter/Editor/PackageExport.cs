@@ -1,8 +1,8 @@
 #if UNITY_EDITOR
 /**
- * Copyright (c) Pixisoft. All rights reserved.
+ * Copyright (c) 2017-2022 Shen, Jen-Chieh
  * 
- * pixisoft.tw@gmail.com
+ * jcs090218@gmail.com
  */
 using System.Collections.Generic;
 using UnityEditor;

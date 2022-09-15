@@ -2,7 +2,7 @@
 
 ### 📝 Additional compatibility information
 
-Any version above 5.6+ sould work. Please see Technical details section for
+Any version above 5.6+ should work. Please see Technical detail section for
 more information.
 
 ## Description
@@ -14,14 +14,14 @@ It allows you to export multiple packages with different contents.
 
 ### 📝 Description
 
-This is often use when you have multiple target to export but it's hard to
-memorize all contents to export for each packages. This tool resolve these
+This is often used when you have multiple target to export, but it's hard to
+memorize all contents to export for each package. This tool resolve these
 issues, and provides a method similar to Git (Source Control) ignore system.
 
 #### Features:
 
 - Export multiple packages in a project
-- Export method similar to .gitignore (easy for coder)
+- Export method similar to `.gitignore` (easy for coder)
 - Lightweight, no other dependencies
 - Clean, no files are generated
 - Highly compatible to any Unity version
@@ -29,10 +29,10 @@ issues, and provides a method similar to Git (Source Control) ignore system.
 *P.S. Notice this package will only work in Editor, and does not expect user
 to use it in production builds.*
 
-If you have any issue please contact us through [GitHub](https://github.com/Pixisoft)
-or email to pixisoft.tw@gmail.com.
+If you have any issue please contact us through [GitHub](https://github.com/jcs090218)
+or email to jcs090218@gmail.com.
 
-[More Info>>](https://github.com/Pixisoft/PackageExporter)
+[More Info>>](https://github.com/jcs090218/PackageExporter)
 
 ### 📝 Technical details
 

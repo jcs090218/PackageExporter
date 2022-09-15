@@ -3,12 +3,12 @@
 
 # Package Exporter
 
-[![License](https://github.com/Pixisoft/PackageExporter/actions/workflows/license.yml/badge.svg)](https://github.com/Pixisoft/PackageExporter/actions/workflows/license.yml)
-[![Source ⚙️](https://github.com/Pixisoft/PackageExporter/actions/workflows/source_build.yml/badge.svg)](https://github.com/Pixisoft/PackageExporter/actions/workflows/source_build.yml)
-[![Source 📦](https://github.com/Pixisoft/PackageExporter/actions/workflows/source_package.yml/badge.svg)](https://github.com/Pixisoft/PackageExporter/actions/workflows/source_package.yml)
-[![Publish ⚙️](https://github.com/Pixisoft/PackageExporter/actions/workflows/publish_build.yml/badge.svg)](https://github.com/Pixisoft/PackageExporter/actions/workflows/publish_build.yml)
-[![Publish 📦](https://github.com/Pixisoft/PackageExporter/actions/workflows/publish_package.yml/badge.svg)](https://github.com/Pixisoft/PackageExporter/actions/workflows/publish_package.yml)
-[![Docs](https://github.com/Pixisoft/PackageExporter/actions/workflows/docs.yml/badge.svg)](https://github.com/Pixisoft/PackageExporter/actions/workflows/docs.yml)
+[![License](https://github.com/jcs090218/PackageExporter/actions/workflows/license.yml/badge.svg)](https://github.com/jcs090218/PackageExporter/actions/workflows/license.yml)
+[![Source ⚙️](https://github.com/jcs090218/PackageExporter/actions/workflows/source_build.yml/badge.svg)](https://github.com/jcs090218/PackageExporter/actions/workflows/source_build.yml)
+[![Source 📦](https://github.com/jcs090218/PackageExporter/actions/workflows/source_package.yml/badge.svg)](https://github.com/jcs090218/PackageExporter/actions/workflows/source_package.yml)
+[![Publish ⚙️](https://github.com/jcs090218/PackageExporter/actions/workflows/publish_build.yml/badge.svg)](https://github.com/jcs090218/PackageExporter/actions/workflows/publish_build.yml)
+[![Publish 📦](https://github.com/jcs090218/PackageExporter/actions/workflows/publish_package.yml/badge.svg)](https://github.com/jcs090218/PackageExporter/actions/workflows/publish_package.yml)
+[![Docs](https://github.com/jcs090218/PackageExporter/actions/workflows/docs.yml/badge.svg)](https://github.com/jcs090218/PackageExporter/actions/workflows/docs.yml)
 
 Export multiple packages by just one click, with no need to uncheck the assets.
 
@@ -27,10 +27,10 @@ to use it in production builds.*
 
 ## 🔗 Links
 
-* [Documentation](https://pixisoft.github.io/Documents/PackageExporter/)
+* [Documentation](https://jcs090218.github.io/PackageExporter/)
 
 ## License
 
-Copyright (c) Pixisoft. All rights reserved.
+Copyright (c) 2017-2022 Jen-Chieh Shen
 
-Licensed under MIT. See [LICENSE.txt](https://github.com/Pixisoft/PackageExporter/blob/master/LICENSE.txt) for details.
+Licensed under MIT. See [LICENSE.txt](https://github.com/jcs090218/PackageExporter/blob/master/LICENSE.txt) for details.
