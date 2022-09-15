@@ -33,7 +33,9 @@ jobs:
         ref: 'gh-pages'
 
     - name: Move book to repository
-      run: mv -f ~/book/* ./
+      run: |
+        mv -rf ./*
+        mv -f ~/book/* ./
 
     - name: Set git config
       run: |
