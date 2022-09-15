@@ -34,7 +34,7 @@ jobs:
 
     - name: Move book to repository
       run: |
-        mv -rf ./*
+        rm -rf ./*
         mv -f ~/book/* ./
 
     - name: Set git config
