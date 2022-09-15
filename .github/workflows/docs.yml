@@ -4,10 +4,6 @@ on:
   pull_request: {}
   push: { branches: [main, master, develop] }
 
-env:
-  REPO_DOC: 'Pixisoft/Documents'
-  BRANCH: 'gh-pages'
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -34,16 +30,10 @@ jobs:
     - name: Checkout document repository
       uses: actions/checkout@v3
       with:
-        repository: ${{ env.REPO_DOC }}
-        persist-credentials: false
-        fetch-depth: 0
-        ref: ${{ env.BRANCH }}
+        ref: 'gh-pages'
 
     - name: Move book to repository
-      run: |
-        rm -rf ${{ github.event.repository.name }}
-        mkdir ${{ github.event.repository.name }}
-        mv -f ~/book/* ./${{ github.event.repository.name }}/
+      run: mv -f ~/book/* ./
 
     - name: Set git config
       run: |
@@ -56,12 +46,4 @@ jobs:
         git pull
         git add .
         git commit -m "Update doc - ${{ github.event.repository.name }}"
-
-    - name: Push book
-      continue-on-error: true
-      uses: jcs090218/github-push-action@master
-      with:
-        repository: ${{ env.REPO_DOC }}
-        github_token: ${{ secrets.ACCESS_TOKEN }}
-        branch: ${{ env.BRANCH }}
-        retry: 7
+        git push origin
