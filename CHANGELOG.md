@@ -5,10 +5,16 @@ All notable changes to this project will be documented in this file.
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
 
-## 1.4.1 (Unreleased)
+## 1.4.2 (Unreleased)
 > Released N/A
 
+* N/A
+
+## 1.4.1
+> Released Sep 15, 2022
+
 * Moved delegates to class level.
+* Revert from owner from `Pixisoft` to `jcs090218` (6cb2ff05f6dc4bc41cef83cfbf92b2d67facad53)
 
 ## 1.4.0
 > Released Nov 1, 2021
