@@ -10,6 +10,7 @@
 /Tutorials
 /Assets/Libraries
 /Publish
+/UserSettings
 
 # don't include the video.
 /Video
