@@ -1,5 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Unity Engine](https://img.shields.io/badge/unity-2022.1.13f1-black.svg?style=flat&logo=unity&cacheSeconds=2592000)](https://unity3d.com/get-unity/download/archive)
+[![Unity Engine](https://img.shields.io/badge/unity-2022.2.8f1-black.svg?style=flat&logo=unity&cacheSeconds=2592000)](https://unity3d.com/get-unity/download/archive)
 
 # Package Exporter
 
@@ -31,6 +31,6 @@ to use it in production builds.*
 
 ## License
 
-Copyright (c) 2017-2022 Jen-Chieh Shen
+Copyright (c) 2017-2023 Jen-Chieh Shen
 
 Licensed under MIT. See [LICENSE.txt](https://github.com/jcs090218/PackageExporter/blob/master/LICENSE.txt) for details.
