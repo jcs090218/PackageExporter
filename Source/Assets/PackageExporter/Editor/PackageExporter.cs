@@ -7,6 +7,7 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEditor;
 
@@ -163,7 +164,7 @@ namespace PackageExporter
             if (!File.Exists(newIgnoreFullPath))
                 return;
 
-            string[] ignoreList = ReadAllLinesWithoutComment(newIgnoreFullPath);
+            string[] wildcards = ReadAllLinesWithoutComment(newIgnoreFullPath);
 
             string[] exportList = GetAllFilesAndDirInPath();
             List<string> finalExportList = new List<string>();
@@ -178,7 +179,7 @@ namespace PackageExporter
                 fixedPath = MakeValidExportPath(fixedPath);
 
                 // check if this path is ignore by the .unityignore file.
-                if (MakeIgnore(fixedPath, ignoreList))
+                if (MakeIgnore(fixedPath, wildcards))
                     continue;
 
                 finalExportList.Add(fixedPath);
@@ -348,29 +349,32 @@ namespace PackageExporter
         /// true: ignore it.
         /// false: don't ignore.
         /// </returns>
-        private static bool MakeIgnore(string path, string[] ignoreList)
+        private static bool MakeIgnore(string path, string[] wildcards)
         {
             // NOTE: Here is actually where we compare the path and ignore path.
 
-            // We use this to get rid of the first part of the path.
-            // Cuz all path includes `Assets/` infront!
-            const string assetPath = "Assets/";
-
-            foreach (string ignorePath in ignoreList)
+            foreach (string wildcard in wildcards)
             {
-                // Path we use to compare.
-                int len = (ignorePath.Length > path.Length) ? path.Length : ignorePath.Length;
-                if (path.Length < assetPath.Length + len)
-                    len = path.Length - assetPath.Length;
-                // NOTE: Get rid of the `Assets/` infront of the path here!
-                string pathCompare = path.Substring(assetPath.Length, len);
+                bool match = Regex.IsMatch(path, WildCardToRegular(wildcard));
 
-                if (pathCompare == ignorePath)
+                if (match)
                     return true;
             }
 
             // don't ignore
             return false;
+        }
+
+        /// <summary>
+        /// Convert wildcard to RegEx!
+        /// 
+        /// If you want to implement both "*" and "?"
+        /// 
+        /// Copied from https://stackoverflow.com/questions/30299671/matching-strings-with-wildcard
+        /// </summary>
+        private static String WildCardToRegular(String value)
+        {
+            return Regex.Escape(value).Replace("\\?", ".").Replace("\\*", ".*");
         }
 
 
@@ -449,5 +453,4 @@ namespace PackageExporter
         }
     }
 }
-
 #endif
