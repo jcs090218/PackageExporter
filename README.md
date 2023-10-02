@@ -1,7 +1,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Unity Engine](https://img.shields.io/badge/unity-2023.1.11f1-black.svg?style=flat&logo=unity)](https://unity3d.com/get-unity/download/archive)
-[![Release](https://img.shields.io/github/tag/jcs090218/PackageExporter.svg?label=release&logo=github)](https://github.com/jcs090218/PackageExporter/releases/latest)
 [![.NET](https://img.shields.io/badge/.NET-2.0-blueviolet.svg)](https://docs.unity3d.com/2018.3/Documentation/Manual/ScriptingRuntimeUpgrade.html)
+[![Release](https://img.shields.io/github/tag/jcs090218/PackageExporter.svg?label=release&logo=github)](https://github.com/jcs090218/PackageExporter/releases/latest)
 
 # Package Exporter
 
