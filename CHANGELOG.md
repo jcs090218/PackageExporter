@@ -5,10 +5,15 @@ All notable changes to this project will be documented in this file.
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
 
-## 1.4.2 (Unreleased)
+## 1.5.1 (Unreleased)
 > Released N/A
 
-* N/A
+- N/A
+
+## 1.5.0
+> Released Oct 02, 2023
+
+* Use wildcard pattern (fc9505a6674723b50e0fb3e653fff6cc99ae3218)
 
 ## 1.4.1
 > Released Sep 15, 2022
