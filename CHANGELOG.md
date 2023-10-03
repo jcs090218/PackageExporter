@@ -14,6 +14,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 > Released Oct 02, 2023
 
 * Use wildcard pattern (fc9505a6674723b50e0fb3e653fff6cc99ae3218)
+* Remove unused UNITY_EDITOR guard (5c46ffebcf4e5678bdfa6a908caa4288b9d90303)
 
 ## 1.4.1
 > Released Sep 15, 2022
