@@ -45,7 +45,7 @@ jobs:
           restore-keys: |
             Library-test-project-
             Library-
-      - uses: game-ci/unity-test-runner@master
+      - uses: game-ci/unity-test-runner@main
         id: testRunner
         with:
           projectPath: ${{ env.PROJECT_PATH }}
