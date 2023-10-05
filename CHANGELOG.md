@@ -8,13 +8,14 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## 1.5.1 (Unreleased)
 > Released N/A
 
-- N/A
+* N/A
 
 ## 1.5.0
 > Released Oct 02, 2023
 
 * Use wildcard pattern (fc9505a6674723b50e0fb3e653fff6cc99ae3218)
 * Remove unused `UNITY_EDITOR` guard (5c46ffebcf4e5678bdfa6a908caa4288b9d90303)
+* Add OpenUPM support (0242e08968d0e2ed24b70194fdc416068b2a5704)
 
 ## 1.4.1
 > Released Sep 15, 2022
