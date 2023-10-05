@@ -20,3 +20,6 @@ AssetStoreTools/
 # Ignore the test proejct files
 _Project/
 _Project2/
+
+# Ignore OpenUPM
+*.json
