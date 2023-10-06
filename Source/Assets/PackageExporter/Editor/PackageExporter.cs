@@ -6,6 +6,7 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEditor;
@@ -22,8 +23,11 @@ namespace PackageExporter
         public static PackageExporter instance = null;
 
         public const string NAME = "Package Exporter";
+        private const string PACKAGE_SCOPE = "com.jcs090218.package-exporter";
 
         private const string PACKAGE_FOLDER = "Assets";
+        private static string LIBRARY_CACHED_PATH = Application.dataPath + "/../Library/PackageCache";
+
         private const string DEFAULT_PACKAGE_NAME = "Empty Package Name";
         private const string DELIMITER = "_";
         private const string VERSION_SYMBOL = "v";
@@ -32,7 +36,6 @@ namespace PackageExporter
         private const string TEMPLATE_PATH = "PackageExporter/template";
 
         private const string IGNORE_FILE_EXT = ".unityignore";
-
         private const string IGNORE_FILE_TEMPLATE_FILE = "template.unityignore";
 
         private const int EXPORT_ALL_PACKAGES_BUTTON_COUNT = 2;
@@ -235,11 +238,35 @@ namespace PackageExporter
             EditorUtility.RevealInFinder(savePath);
         }
 
+        private static string GetTemplateLocationAssets()
+        {
+            string templateFolder = Application.dataPath + "/" + TEMPLATE_PATH + "/";
+            string templatePath = templateFolder + IGNORE_FILE_TEMPLATE_FILE;
+            return templatePath;
+        }
+
+        private static string GetTemplateLocationLibrary()
+        {
+            List<string> path = Directory.GetDirectories(LIBRARY_CACHED_PATH + "/", "*", SearchOption.TopDirectoryOnly)
+                .Where(x => Path.GetFileName(x).StartsWith(PACKAGE_SCOPE + "@")).ToList();
+
+            return path[0] + "/template/template.unityignore";
+        }
+
+        private static string GetTemplateLocation()
+        {
+            string templatePath = GetTemplateLocationAssets();
+
+            if (File.Exists(templatePath))
+                return templatePath;
+
+            return GetTemplateLocationLibrary();
+        }
+
         private static void GenerateUnityIgnoreFiles()
         {
-            string ignoreTemplatePath = Application.dataPath + "/" + TEMPLATE_PATH + "/";
-            string ignoreFileTemplatePath = ignoreTemplatePath + IGNORE_FILE_TEMPLATE_FILE;
-            string[] templateLines = File.ReadAllLines(ignoreFileTemplatePath);
+            string templatePath = GetTemplateLocation();
+            string[] templateLines = File.ReadAllLines(templatePath);
 
             for (int index = 0; index < instance.exportPackagesList.Length; ++index)
             {
@@ -252,16 +279,17 @@ namespace PackageExporter
                 string ignoreFileName = packageName + IGNORE_FILE_EXT;
                 string newIgnoreFullPath = ignoreFilePath + ignoreFileName;
 
-                ignoreFileTemplatePath = ignoreFileTemplatePath.Replace("\\", "/");
-                newIgnoreFullPath = newIgnoreFullPath.Replace("\\", "/");
+                Directory.CreateDirectory(ignoreFilePath);
 
+                templatePath = templatePath.Replace("\\", "/");
+                newIgnoreFullPath = newIgnoreFullPath.Replace("\\", "/");
 
                 if (!File.Exists(newIgnoreFullPath))
                 {
-                    FileStream fileStream = new FileStream(newIgnoreFullPath,
-                                            FileMode.OpenOrCreate,
-                                            FileAccess.ReadWrite,
-                                            FileShare.None);
+                    var fileStream = new FileStream(newIgnoreFullPath,
+                        FileMode.OpenOrCreate,
+                        FileAccess.ReadWrite,
+                        FileShare.None);
 
                     // make header, date, info, etc.
                     string[] decoratedTemplateLines = MakeDecoration(templateLines, packageName, versionNo);

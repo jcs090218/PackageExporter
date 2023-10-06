@@ -2,6 +2,8 @@
 [![Unity Engine](https://img.shields.io/badge/unity-2023.1.11f1-black.svg?style=flat&logo=unity)](https://unity3d.com/get-unity/download/archive)
 [![.NET](https://img.shields.io/badge/.NET-2.0-blueviolet.svg)](https://docs.unity3d.com/2018.3/Documentation/Manual/ScriptingRuntimeUpgrade.html)
 [![Release](https://img.shields.io/github/tag/jcs090218/PackageExporter.svg?label=release&logo=github)](https://github.com/jcs090218/PackageExporter/releases/latest)
+[![openupm](https://img.shields.io/npm/v/com.jcs090218.package-exporter?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.jcs090218.package-exporter/)
+[![openupm](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=downloads&query=%24.downloads&suffix=%2Fmonth&url=https%3A%2F%2Fpackage.openupm.com%2Fdownloads%2Fpoint%2Flast-month%2Fcom.jcs090218.package-exporter)](https://openupm.com/packages/com.jcs090218.package-exporter/)
 
 # Package Exporter
 
