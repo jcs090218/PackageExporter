@@ -5,10 +5,15 @@ All notable changes to this project will be documented in this file.
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
 
-## 1.5.1 (Unreleased)
+## 1.5.2 (Unreleased)
 > Released N/A
 
 * N/A
+
+## 1.5.1
+> Released Oct 05, 2023
+
+* Add OpenUPM support (8fe700b221ca2c57ef5f45f49dfddacc39e439d6)
 
 ## 1.5.0
 > Released Oct 02, 2023
