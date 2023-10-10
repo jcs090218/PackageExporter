@@ -119,7 +119,3 @@ On Windows,
 ```
 
 For more information, see [Command line arguments](https://docs.unity3d.com/Manual/CommandLineArguments.html).
-
-## 📝 Todo List
-
-- [ ] Support ingore extension syntax. (*.meta)
