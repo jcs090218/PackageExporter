@@ -6,7 +6,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace PackageExporter
+namespace jcs090218.PackageExporter
 {
     /// <summary>
     /// Utility for Editor Layout

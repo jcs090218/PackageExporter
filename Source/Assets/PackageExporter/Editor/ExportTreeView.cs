@@ -12,7 +12,7 @@ using UnityEditorInternal;
 using UnityEditor;
 using UnityEditor.Experimental;
 
-namespace PackageExporter
+namespace jcs090218.PackageExporter
 {
     /// <summary>
     /// Renders tree view to `PackageExport` window.

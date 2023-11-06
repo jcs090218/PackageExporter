@@ -6,7 +6,7 @@
 using System;
 using System.IO;
 
-namespace PackageExporter
+namespace jcs090218.PackageExporter
 {
     /// <summary>
     /// Command line interface for Unity's batch execution.

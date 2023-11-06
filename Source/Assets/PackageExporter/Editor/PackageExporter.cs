@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEditor;
 
-namespace PackageExporter
+namespace jcs090218.PackageExporter
 {
     /// <summary>
     /// Main control panel for this plugin.

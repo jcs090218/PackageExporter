@@ -8,7 +8,7 @@ using UnityEditor;
 using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 
-namespace PackageExporter
+namespace jcs090218.PackageExporter
 {
     /// <summary>
     /// Small window that pop up and show all files that has been selected 

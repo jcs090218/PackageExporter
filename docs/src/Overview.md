@@ -88,9 +88,9 @@ Export the package `Hello World`.
 
 You can export package by using Unity's batch mode.
 
-| Method                             | Arguments                        | Details                             |
-|:-----------------------------------|:---------------------------------|:------------------------------------|
-| `PackageExporter.BatchMode.Export` | `_name`, `_version`, `_savePath` | Export package by unityignore name. |
+| Method                                       | Arguments                        | Details                             |
+|:---------------------------------------------|:---------------------------------|:------------------------------------|
+| `jcs090218.PackageExporter.BatchMode.Export` | `_name`, `_version`, `_savePath` | Export package by unityignore name. |
 
 | Command     | Optional | Details                                                          |
 |:------------|:--------:|:-----------------------------------------------------------------|
@@ -101,7 +101,7 @@ You can export package by using Unity's batch mode.
 For example,
 
 ```
-$UNITY_PATH -batchmode -quit -projectPath "." -executeMethod PackageExporter.BatchMode.Export _name "Hello World" _version "0.1.0" _savePath "."
+$UNITY_PATH -batchmode -quit -projectPath "." -executeMethod jcs090218.PackageExporter.BatchMode.Export _name "Hello World" _version "0.1.0" _savePath "."
 ```
 
 The `$UNITY_PATH` is the path to Unity executable hence it depends on variant OS.
