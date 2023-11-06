@@ -234,7 +234,7 @@ ProjectExporter
 <h2 id="-batch-mode"><a class="header" href="#-batch-mode">🖥️ Batch Mode</a></h2>
 <p>You can export package by using Unity's batch mode.</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: left">Method</th><th style="text-align: left">Arguments</th><th style="text-align: left">Details</th></tr></thead><tbody>
-<tr><td style="text-align: left"><code>PackageExporter.BatchMode.Export</code></td><td style="text-align: left"><code>_name</code>, <code>_version</code>, <code>_savePath</code></td><td style="text-align: left">Export package by unityignore name.</td></tr>
+<tr><td style="text-align: left"><code>jcs090218.PackageExporter.BatchMode.Export</code></td><td style="text-align: left"><code>_name</code>, <code>_version</code>, <code>_savePath</code></td><td style="text-align: left">Export package by unityignore name.</td></tr>
 </tbody></table>
 </div><div class="table-wrapper"><table><thead><tr><th style="text-align: left">Command</th><th style="text-align: center">Optional</th><th style="text-align: left">Details</th></tr></thead><tbody>
 <tr><td style="text-align: left"><code>_name</code></td><td style="text-align: center">❌</td><td style="text-align: left">Name of the exported package listed under unityignore directory.</td></tr>
@@ -243,7 +243,7 @@ ProjectExporter
 </tbody></table>
 </div>
 <p>For example,</p>
-<pre><code>$UNITY_PATH -batchmode -quit -projectPath &quot;.&quot; -executeMethod PackageExporter.BatchMode.Export _name &quot;Hello World&quot; _version &quot;0.1.0&quot; _savePath &quot;.&quot;
+<pre><code>$UNITY_PATH -batchmode -quit -projectPath &quot;.&quot; -executeMethod jcs090218.PackageExporter.BatchMode.Export _name &quot;Hello World&quot; _version &quot;0.1.0&quot; _savePath &quot;.&quot;
 </code></pre>
 <p>The <code>$UNITY_PATH</code> is the path to Unity executable hence it depends on variant OS.</p>
 <p>On macOS,</p>
