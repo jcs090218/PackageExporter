@@ -5,10 +5,15 @@ All notable changes to this project will be documented in this file.
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
 
-## 1.5.2 (Unreleased)
+## 1.5.3 (Unreleased)
 > Released N/A
 
 * N/A
+
+## 1.5.2
+> Released Nov 05, 2023
+
+* Fix namespace conflict with `Asset Publishing Tools` (3ff81613852edd37f2de263dfa37c7915244864b)
 
 ## 1.5.1
 > Released Oct 05, 2023
