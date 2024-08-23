@@ -8,7 +8,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## 1.5.3 (Unreleased)
 > Released N/A
 
-* N/A
+* feat: Add button to fill by ignore files (00416667e6fc285b61c9f3fd270668a2fd185d1c)
 
 ## 1.5.2
 > Released Nov 05, 2023
