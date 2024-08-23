@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEditor;
+using System.Drawing.Printing;
 
 namespace jcs090218.PackageExporter
 {
@@ -32,7 +33,7 @@ namespace jcs090218.PackageExporter
         private const string DELIMITER = "_";
         private const string VERSION_SYMBOL = "v";
 
-        private const string IGNORE_FILE_PATH = "PackageExporter/unityignore";
+        private const string IGNORE_PATH = "PackageExporter/unityignore";
         private const string TEMPLATE_PATH = "PackageExporter/template";
 
         private const string IGNORE_FILE_EXT = ".unityignore";
@@ -56,7 +57,7 @@ namespace jcs090218.PackageExporter
             public string versionNo;
         };
 
-        public ExportPackageInfo[] exportPackagesList = { };
+        public List<ExportPackageInfo> exportPackagesList = new List<ExportPackageInfo>();
 
         private SerializedObject mSerializedObject = null;
         private SerializedProperty mSerializedProperty = null;
@@ -107,11 +108,20 @@ namespace jcs090218.PackageExporter
                 mSerializedObject.ApplyModifiedProperties();
             });
 
-            GUILayout.Label("Unity Ignore File", EditorStyles.boldLabel);
+            EditorUtil.BeginHorizontal(() =>
+            {
+                if (GUILayout.Button("Clear"))
+                    ClearUnityIgnore();
+
+                if (GUILayout.Button("Fill by .unityignore"))
+                    FillUnityIgnore();
+            });
+
+            GUILayout.Label("Ignore Files", EditorStyles.boldLabel);
 
             EditorUtil.CreateGroup(() =>
             {
-                if (GUILayout.Button("Generate Unity Ignore"))
+                if (GUILayout.Button("Generate .unityignore"))
                     GenerateUnityIgnoreFiles();
             });
 
@@ -121,7 +131,7 @@ namespace jcs090218.PackageExporter
 
             EditorUtil.CreateGroup(() =>
             {
-                for (int index = 0; index < instance.exportPackagesList.Length; ++index)
+                for (int index = 0; index < instance.exportPackagesList.Count; ++index)
                 {
                     ExportPackageInfo eps = instance.exportPackagesList[index];
 
@@ -157,7 +167,7 @@ namespace jcs090218.PackageExporter
         {
             string finalPackageName = FormPackageName(name, version);
 
-            string ignoreFilePath = Application.dataPath + "/" + IGNORE_FILE_PATH + "/";
+            string ignoreFilePath = Application.dataPath + "/" + IGNORE_PATH + "/";
             string ignoreFileName = name + IGNORE_FILE_EXT;
             string newIgnoreFullPath = ignoreFilePath + ignoreFileName;
 
@@ -213,7 +223,8 @@ namespace jcs090218.PackageExporter
         public static void ExportNext()
         {
             ++EXPORT_INDEX;
-            if (instance.exportPackagesList.Length <= EXPORT_INDEX)
+
+            if (instance.exportPackagesList.Count <= EXPORT_INDEX)
                 return;
 
             ExportPackageInfo eps = instance.exportPackagesList[EXPORT_INDEX];
@@ -263,19 +274,75 @@ namespace jcs090218.PackageExporter
             return GetTemplateLocationLibrary();
         }
 
+        /// <summary>
+        /// Return a list of .unityignore files.
+        /// </summary>
+        private static string[] GetUnityignoreFiles()
+        {
+            string unityignore = Application.dataPath + "/" + IGNORE_PATH + "/";
+
+            return Directory.GetFiles(unityignore, "*.unityignore");
+        }
+
+        /// <summary>
+        /// Return the version number from filename.
+        /// </summary>
+        private static string GetVersion(string filename)
+        {
+            string[] allLine = File.ReadAllLines(filename);
+
+            foreach (string line in allLine)
+            {
+                string pattern = "Version: ";
+
+                if (CheckIfComment(line) && line.Contains(pattern))
+                {
+                    int start = line.IndexOf(pattern) + pattern.Length;
+
+                    return line.Substring(start);
+                }
+            }
+
+            return "";
+        }
+
+        private static void ClearUnityIgnore()
+        {
+            Undo.RegisterFullObjectHierarchyUndo(instance, NAME + " clear");
+
+            instance.exportPackagesList.Clear();
+        }
+
+        private static void FillUnityIgnore()
+        {
+            ClearUnityIgnore();  // clear it first
+
+            foreach (string filename in GetUnityignoreFiles())
+            {
+                string name = Path.GetFileNameWithoutExtension(filename);
+
+                var info = new ExportPackageInfo();
+
+                info.packageName = name;
+                info.versionNo = GetVersion(filename);
+
+                instance.exportPackagesList.Add(info);
+            }
+        }
+
         private static void GenerateUnityIgnoreFiles()
         {
             string templatePath = GetTemplateLocation();
             string[] templateLines = File.ReadAllLines(templatePath);
 
-            for (int index = 0; index < instance.exportPackagesList.Length; ++index)
+            for (int index = 0; index < instance.exportPackagesList.Count; ++index)
             {
                 ExportPackageInfo eps = instance.exportPackagesList[index];
 
                 string packageName = eps.packageName;
                 string versionNo = eps.versionNo;
 
-                string ignoreFilePath = Application.dataPath + "/" + IGNORE_FILE_PATH + "/";
+                string ignoreFilePath = Application.dataPath + "/" + IGNORE_PATH + "/";
                 string ignoreFileName = packageName + IGNORE_FILE_EXT;
                 string newIgnoreFullPath = ignoreFilePath + ignoreFileName;
 
@@ -315,7 +382,7 @@ namespace jcs090218.PackageExporter
         /// <returns></returns>
         private static string[] MakeDecoration(string[] templateLines, string packageName, string versionNo)
         {
-            List<string> decoratedTemplate = new List<string>();
+            var decoratedTemplate = new List<string>();
 
             foreach (string line in templateLines)
             {
@@ -435,7 +502,7 @@ namespace jcs090218.PackageExporter
         {
             string[] allLine = File.ReadAllLines(path_to_file);
 
-            List<string> cleanLine = new List<string>();
+            var cleanLine = new List<string>();
 
             for (int count = 0; count < allLine.Length; ++count)
             {
