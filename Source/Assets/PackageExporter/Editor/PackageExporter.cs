@@ -10,7 +10,6 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEditor;
-using System.Drawing.Printing;
 
 namespace jcs090218.PackageExporter
 {

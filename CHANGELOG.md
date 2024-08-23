@@ -5,8 +5,13 @@ All notable changes to this project will be documented in this file.
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
 
-## 1.5.3 (Unreleased)
+## 1.5.4 (Unreleased)
 > Released N/A
+
+* N/A
+
+## 1.5.3
+> Released Aug 23, 2024
 
 * feat: Add button to fill by ignore files (00416667e6fc285b61c9f3fd270668a2fd185d1c)
 
