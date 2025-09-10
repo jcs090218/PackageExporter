@@ -5,10 +5,15 @@ All notable changes to this project will be documented in this file.
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
 
-## 1.5.4 (Unreleased)
+## 1.5.5 (Unreleased)
 > Released N/A
 
 * N/A
+
+## 1.5.4
+> Released Sep 10, 2025
+
+* fix: `TreeView`'s compatible to Unity 6.2 ([`d048129`](../../commit/d048129524ff73b2be4327a3a7d5c7f80c78bd8a))
 
 ## 1.5.3
 > Released Aug 23, 2024
