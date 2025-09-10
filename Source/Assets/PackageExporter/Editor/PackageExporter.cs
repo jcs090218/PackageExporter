@@ -1,5 +1,5 @@
 ﻿/**
- * Copyright (c) 2017-2023 Shen, Jen-Chieh
+ * Copyright (c) 2017-2025 Shen, Jen-Chieh
  * 
  * jcs090218@gmail.com
  */

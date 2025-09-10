@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017-2023 Shen, Jen-Chieh
+ * Copyright (c) 2017-2025 Shen, Jen-Chieh
  * 
  * jcs090218@gmail.com
  */
@@ -19,7 +19,7 @@ namespace jcs090218.PackageExporter
         /* Variables */
 
         private ExportTreeView mTreeView;
-        private TreeViewState mTreeViewState;
+        private TreeViewState<int> mTreeViewState;
 
         public List<string> exportList = new List<string>();
         public string packageName = "";
@@ -119,7 +119,7 @@ namespace jcs090218.PackageExporter
             }
 
             if (mTreeViewState == null)
-                mTreeViewState = new TreeViewState();
+                mTreeViewState = new TreeViewState<int>();
 
             if (mTreeView == null)
                 mTreeView = new ExportTreeView(this, mTreeViewState);

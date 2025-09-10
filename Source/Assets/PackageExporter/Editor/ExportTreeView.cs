@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017-2023 Shen, Jen-Chieh
+ * Copyright (c) 2017-2025 Shen, Jen-Chieh
  * 
  * jcs090218@gmail.com
  */
@@ -17,7 +17,7 @@ namespace jcs090218.PackageExporter
     /// <summary>
     /// Renders tree view to `PackageExport` window.
     /// </summary>
-    public class ExportTreeView : TreeView
+    public class ExportTreeView : TreeView<int>
     {
         /* Variables */
 
@@ -32,7 +32,7 @@ namespace jcs090218.PackageExporter
 
         /* Functions */
 
-        public ExportTreeView(PackageExport exportWindow, TreeViewState state)
+        public ExportTreeView(PackageExport exportWindow, TreeViewState<int> state)
             : base(state)
         {
             this.mPackageExport = exportWindow;
@@ -41,10 +41,10 @@ namespace jcs090218.PackageExporter
             ExpandAll();
         }
 
-        protected override TreeViewItem BuildRoot()
+        protected override TreeViewItem<int> BuildRoot()
         {
-            var root = new TreeViewItem { id = 0, depth = -1, displayName = "Root" };
-            var dirs = new Dictionary<string, TreeViewItem>();
+            var root = new TreeViewItem<int> { id = 0, depth = -1, displayName = "Root" };
+            var dirs = new Dictionary<string, TreeViewItem<int>>();
             int id = 1;
 
             // Sort by name, so it looks nicer
@@ -55,7 +55,7 @@ namespace jcs090218.PackageExporter
                 // Get path to walk through
                 string[] folders = file.Split('/');
 
-                TreeViewItem parent = root;
+                TreeViewItem<int> parent = root;
                 string current = "";
 
                 foreach (var folder in folders)
@@ -71,7 +71,7 @@ namespace jcs090218.PackageExporter
                         continue;
                     }
 
-                    var newItem = new TreeViewItem { id = id, displayName = folder };
+                    var newItem = new TreeViewItem<int> { id = id, displayName = folder };
 
                     var icon = Constants.folderIcon;
                     if (File.Exists(current))
