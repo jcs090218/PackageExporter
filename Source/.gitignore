@@ -15,6 +15,14 @@ UserSettings/
 # don't include the video.
 Video/
 
+# ignore build info
+/Assets/StreamingAssets/build_info
+/Assets/StreamingAssets/build_info.*
+
+# Backups
+/_Recovery/
+/_Recovery.*
+
 # ignore the following extension file
 *.svd
 *.userprefs
