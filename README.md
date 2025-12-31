@@ -35,6 +35,6 @@ to use it in production builds.*
 
 ## License
 
-Copyright (c) 2017-2025 Jen-Chieh Shen
+Copyright (c) 2017-2026 Jen-Chieh Shen
 
 Licensed under MIT. See [LICENSE.txt](https://github.com/jcs090218/PackageExporter/blob/master/LICENSE.txt) for details.
