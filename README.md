@@ -1,5 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Unity Engine](https://img.shields.io/badge/unity-6000.3.0f1-black.svg?style=flat&logo=unity)](https://unity3d.com/get-unity/download/archive)
+[![Unity Engine](https://img.shields.io/badge/unity-6000.3.5f2-black.svg?style=flat&logo=unity)](https://unity3d.com/get-unity/download/archive)
 [![.NET](https://img.shields.io/badge/.NET-2.0-blueviolet.svg)](https://docs.unity3d.com/2018.3/Documentation/Manual/ScriptingRuntimeUpgrade.html)
 [![Release](https://img.shields.io/github/tag/jcs090218/PackageExporter.svg?label=release&logo=github)](https://github.com/jcs090218/PackageExporter/releases/latest)
 [![openupm](https://img.shields.io/npm/v/com.jcs090218.package-exporter?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.jcs090218.package-exporter/)
